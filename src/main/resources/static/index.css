@@ -22,3 +22,10 @@ body{
     box-shadow: darkslategrey;
 
 }
+
+
+@media screen and (max-width: 1700px) {
+    #logo {
+        width: 30%;
+    }
+}
