@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet"  href="/game.css" th:href="'/game.css'"/>
     <title>Title</title>
 </head>
 <body>
-<h1>hello</h1>
+        <h1>Gameplay</h1>
+        <div th:class="trashcan-container">
+            <div th:class="trashcan" th:id="kompost">Kompost</div>
+            <div th:class="trashcan" th:id="plast">Plast</div>
+            <div th:class="trashcan" th:id="glas">Glas</div>
+            <div th:class="trashcan" th:id="batterier">Batterier</div>
+            <div th:class="trashcan" th:id="kartong">Kartong</div>
+        </div>
+
+        <div th:class="trash-container">
+            <div th:class="trash" draggable="true" th:id="kompost">Bananskal</div>
+            <div th:class="trash" draggable="true" th:id="plast">Plastflaska</div>
+            <div th:class="trash" draggable="true" th:id="glas">Glasflaska</div>
+            <div th:class="trash" draggable="true" th:id="batterier">Batteri</div>
+            <div th:class="trash" draggable="true" th:id="kartong">Juicepaket</div>
+        </div>
+
+        <script src="/gameplay.js"></script>
 </body>
 </html>
