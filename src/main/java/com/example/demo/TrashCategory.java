@@ -4,9 +4,4 @@ public enum TrashCategory {
    COMPOST, PLASTIC, BATTERIES, GLASS;
 
 
-
-
-
-
-
 }
