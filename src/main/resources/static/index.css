@@ -1,5 +1,7 @@
 body{
-    background-image: url("https://img.freepik.com/free-vector/dirty-park-garden-with-garbage-paths-lawn-vector-cartoon-illustration-summer-landscape-with-green-trees-bushes-grass-metal-fence-trash-plastic-cups-bottle-paper_107791-11187.jpg?w=2000");
+    background: url(background.png);
+    background-repeat: repeat;
+    background-size: cover;
 }
 #play-button{
 
