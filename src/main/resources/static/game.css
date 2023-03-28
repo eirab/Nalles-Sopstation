@@ -50,52 +50,7 @@ body {
 }
 
 
-     .trash-1 {
-       background: purple;
-       cursor: grab;
-       border-radius: 5px;
-       width: 80px;
-       height: 40px;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-    }
-
-      .trash-2 {
-          background: purple;
-          cursor: grab;
-          border-radius: 5px;
-          width: 80px;
-          height: 40px;
-          display: flex;
-          justify-content: center;
-          align-items: center
-        }
-
-
-    .trash-3 {
-       background: purple;
-       cursor: grab;
-       border-radius: 5px;
-       width: 80px;
-       height: 40px;
-       display: flex;
-       justify-content: center;
-       align-items: center
-    }
-
-    .trash-4 {
-        background: purple;
-        cursor: grab;
-        border-radius: 5px;
-        width: 80px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center
-    }
-
-    .trash-5 {
+    .trash {
         width: 100px;
         background: purple;
         padding: 20px;
@@ -111,6 +66,12 @@ body {
     .dragopacity {
         opacity: 0.5;
     }
+
+    .hide {
+        visibility: hidden;
+    }
+
+
 
 
 

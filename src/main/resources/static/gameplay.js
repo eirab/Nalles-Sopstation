@@ -1,10 +1,17 @@
 const trashcans = document.querySelectorAll('.trashcan')
+const trashes = document.querySelectorAll('.trash')
 
+let beingDragged;
 
 trashcans.forEach(can => {
     can.addEventListener('dragenter', dragEnter)
        can.addEventListener('dragover', dragOver)
-    can.addEventListener('dragleave', dragLeave)
+       can.addEventListener('drop', dragDrop)
+       can.addEventListener('dragleave', dragLeave)
+})
+
+trashes.forEach(trash => {
+    trash.addEventListener("dragstart", dragStart)
 })
 
 function dragEnter(e) {
@@ -18,4 +25,17 @@ function dragLeave(e) {
 function dragOver(e) {
     e.preventDefault();
     console.log(e.target)
+}
+
+function dragStart(e) {
+      beingDragged = e.target;
+}
+
+function dragDrop(e) {
+    if(e.target.id === beingDragged.id) {
+        beingDragged.classList.add('hide')
+        e.target.classList.remove('dragopacity')
+    } else {
+        e.target.classList.remove('dragopacity')
+    }
 }
