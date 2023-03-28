@@ -1,19 +1,20 @@
-CREATE TABLE TRASH-CATEGORY(
-    id int PRIMARY KEY,
+CREATE TABLE TRASHCATHEGORY (
+    id int AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50)
 
 );
 
 
 CREATE TABLE TRASH(
-    id int PRIMARY KEY,
+    id int  AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50),
-    trash-category references trash-category(id)
+    trash_cathegory_id int REFERENCES TRASHCATHEGORY(id)
 
 );
 
-CREATE TABLE TRASH-CAN(
-    id int PRIMARY KEY,
+CREATE TABLE TRASHCAN(
+    id int AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50),
-    trash-category references trash-category(id)
+    trash_cathegory_id int REFERENCES TRASHCATHEGORY(id)
 );
+

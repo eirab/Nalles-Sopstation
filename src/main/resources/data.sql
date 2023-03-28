@@ -1,11 +1,11 @@
-INSERT INTO TRASH-CATEGORY (id, name) VALUES (101, 'Kompost');
-INSERT INTO TRASH-CATEGORY (id, name) VALUES (102, 'Plast');
-INSERT INTO TRASH-CATEGORY (id, name) VALUES (103, 'Glas');
-INSERT INTO TRASH-CATEGORY (id, name) VALUES (104, 'Batterier');
-INSERT INTO TRASH-CATEGORY (id, name) VALUES (105, 'Pappersförpackningar');
+INSERT INTO TRASHCATHEGORY ( name) VALUES ( 'Kompost');
+INSERT INTO TRASHCATHEGORY ( name) VALUES ( 'Plast');
+INSERT INTO TRASHCATHEGORY ( name) VALUES ('Glas');
+INSERT INTO TRASHCATHEGORY (name) VALUES ( 'Batterier');
+INSERT INTO TRASHCATHEGORY (name) VALUES ( 'Pappersförpackningar');
 
-INSERT INTO TRASH (id, name, trash-category) VALUES (201, 'Bananskal', 101);
-INSERT INTO TRASH (id, name, trash-category) VALUES (201, 'Plastic', 102);
-INSERT INTO TRASH (id, name, trash-category) VALUES (201, 'Glas', 103);
-INSERT INTO TRASH (id, name, trash-category) VALUES (201, 'Batteri', 104);
-INSERT INTO TRASH (id, name, trash-category) VALUES (201, 'Papperskartong',105);
+INSERT INTO TRASH ( name, trash_cathegory_id) VALUES ( 'Bananskal', 1);
+INSERT INTO TRASH ( name, trash_cathegory_id) VALUES ( 'Plastic', 2);
+INSERT INTO TRASH ( name, trash_cathegory_id) VALUES ( 'Glas', 3);
+INSERT INTO TRASH ( name, trash_cathegory_id) VALUES ( 'Batteri', 4);
+INSERT INTO TRASH ( name, trash_cathegory_id) VALUES ( 'Papperskartong',5);
