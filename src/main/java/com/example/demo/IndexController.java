@@ -11,6 +11,11 @@ public class IndexController {
         return "index";
     }
 
+    @GetMapping("/spel")
+    public String getGameplaySite() {
+        return "game";
+    }
+
 
 
 
