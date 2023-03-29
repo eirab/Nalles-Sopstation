@@ -23,6 +23,14 @@
             <div th:class="trash" draggable="true" th:id="kartong">Juicepaket</div>
         </div>
 
+        <div th:each="trash: ${trashArray}">
+            <p th:text="${trash.getName()}"> </p>
+        </div>
+
+        <div th:each="trashCan: ${trashCanArray}">
+            <p th:text="${trashCan.getName()}"> </p>
+        </div>
+
         <script src="/gameplay.js"></script>
 </body>
 </html>
