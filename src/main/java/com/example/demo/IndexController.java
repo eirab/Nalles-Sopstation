@@ -32,6 +32,13 @@ private TrashCanRepository trashCanRepository;
     }
 
 
+    @GetMapping("/vinst")
+    public String getWinSite() {
+        return "win";
+    }
+
+
+
 
 
 
