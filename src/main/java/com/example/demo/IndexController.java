@@ -18,9 +18,6 @@ private TrashCanRepository trashCanRepository;
 
     @GetMapping("/")
     public String start(Model model ) {
-
-
-
         return "index";
     }
 
