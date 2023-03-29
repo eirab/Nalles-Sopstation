@@ -17,7 +17,10 @@ private TrashRepository trashRepository;
 private TrashCanRepository trashCanRepository;
 
     @GetMapping("/")
-    public String task1() {
+    public String start(Model model ) {
+
+
+
         return "index";
     }
 
