@@ -8,9 +8,9 @@ const jsConfetti = new JSConfetti()
 
 
 document.addEventListener("DOMContentLoaded", function() {
-
-/*  jsConfetti.addConfetti()*/
- timeout = setTimeout(startConfetti, 1000);
+ timeout = setTimeout(startConfetti, 700);
+ timeout = setTimeout(startConfetti, 1100);
+ timeout = setTimeout(startConfetti, 1500);
 });
 
 function startConfetti() {
