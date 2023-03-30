@@ -8,10 +8,13 @@ public class TrashCan {
 
     private int trash_category_id;
 
-    public TrashCan(int id, String name, int trash_category_id) {
+    private String image;
+
+    public TrashCan(int id, String name, int trash_category_id, String image) {
         this.id = id;
         this.name = name;
         this.trash_category_id = trash_category_id;
+        this.image = image;
     }
 
     public int getId() {
@@ -36,5 +39,13 @@ public class TrashCan {
 
     public void setTrash_category_id(int trash_category_id) {
         this.trash_category_id = trash_category_id;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

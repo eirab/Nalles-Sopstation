@@ -9,31 +9,31 @@
 <body>
 
 
+
         <div id="gameplay" text="score">Gameplay</div>
+
         <div th:class="black-filter"></div>
         <div th:class="trashcan-container">
-            <div th:class="trashcan" th:id="kompost">Kompost</div>
-            <div th:class="trashcan" th:id="plast">Plast</div>
-            <div th:class="trashcan" th:id="glas">Glas</div>
-            <div th:class="trashcan" th:id="batterier">Metall</div>
-            <div th:class="trashcan" th:id="kartong">Kartong</div>
+            <div th:class="trashcan" th:id="1">Kompost</div>
+            <div th:class="trashcan" th:id="2">Plast</div>
+            <div th:class="trashcan" th:id="1">Glas</div>
+            <div th:class="trashcan" th:id="4">Metall</div>
+            <div th:class="trashcan" th:id="5">Kartong</div>
         </div>
+
 
         <div th:class="trash-container">
-            <div th:class="trash" draggable="true" th:id="kompost">Bananskal</div>
-            <div th:class="trash" draggable="true" th:id="plast">Plastflaska</div>
-            <div th:class="trash" draggable="true" th:id="glas">Glasflaska</div>
-            <div th:class="trash" draggable="true" th:id="batterier">Metall</div>
-            <div th:class="trash" draggable="true" th:id="kartong">Juicepaket</div>
-        </div>
-
         <div th:each="trash: ${trashArray}">
-            <p th:text="${trash.getName()}"> </p>
+            <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" th:alt="${trash.getName()}" />
+        </div>
         </div>
 
-        <div th:each="trashCan: ${trashCanArray}">
-            <p th:text="${trashCan.getName()}"> </p>
+        <div th:class="trashcan-container">
+                <div th:each="trashCan: ${trashCanArray}">
+                    <div th:class="trashcan" th:text="${trashCan.getName()}" th:id="${trashCan.getTrash_category_id()}"></div>
+                </div>
         </div>
+
 
         <script src="/gameplay.js"></script>
 </body>

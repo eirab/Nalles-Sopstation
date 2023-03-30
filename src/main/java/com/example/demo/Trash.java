@@ -6,12 +6,15 @@ public class Trash {
     private String name;
     private int trash_category_id;
 
+    private String image;
 
 
-    public Trash(int trash_id, String name, int trash_category_id) {
+
+    public Trash(int trash_id, String name, int trash_category_id, String image) {
         this.trash_id = trash_id;
         this.name = name;
         this.trash_category_id = trash_category_id;
+        this.image = image;
     }
 
     public int getTrash_id() {
@@ -36,4 +39,12 @@ public class Trash {
         this.trash_category_id = trash_category_id;
     }
 
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
