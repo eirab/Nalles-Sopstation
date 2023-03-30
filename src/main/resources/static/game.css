@@ -38,7 +38,7 @@ body {
 }
 
 .trashcan {
-    width: 110px;
+    width: 150px;
     height: 80px;
     background: midnightblue;
     color: white;
@@ -46,6 +46,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    font-size: 14px;
 
 }
 
