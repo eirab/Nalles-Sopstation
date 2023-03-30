@@ -19,6 +19,8 @@ private TrashCanRepository trashCanRepository;
     @GetMapping("/")
     public String start(Model model ) {
 
+
+
         return "index";
     }
 
@@ -27,6 +29,14 @@ private TrashCanRepository trashCanRepository;
         model.addAttribute("trashArray", trashRepository.getTrash());
         model.addAttribute("trashCanArray",trashCanRepository.getTrashCans());
         return "game";
+    }
+
+
+
+
+    @GetMapping("/vinst")
+    public String getWinSite() {
+        return "win";
     }
 
 
