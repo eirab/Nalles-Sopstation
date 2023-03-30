@@ -18,6 +18,9 @@ private TrashCanRepository trashCanRepository;
 
     @GetMapping("/")
     public String start(Model model ) {
+
+
+
         return "index";
     }
 
@@ -29,17 +32,12 @@ private TrashCanRepository trashCanRepository;
     }
 
 
+
+
     @GetMapping("/vinst")
     public String getWinSite() {
         return "win";
     }
-
-
-
-
-
-
-
 
 
 }
