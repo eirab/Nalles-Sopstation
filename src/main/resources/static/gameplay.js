@@ -1,5 +1,6 @@
 const trashcans = document.querySelectorAll('.trashcan')
 const trashes = document.querySelectorAll('.trash')
+const Gtext = document.getElementById("gameplay")
 
 let beingDragged;
 
@@ -35,7 +36,18 @@ function dragDrop(e) {
     if(e.target.id === beingDragged.id) {
         beingDragged.classList.add('hide')
         e.target.classList.remove('dragopacity')
+        fetch("/updateScore")
+            .then((response) => response.json())
+            .then((score) => {
+                Gtext.innerText = score.message;
+
+
+            });
+
     } else {
         e.target.classList.remove('dragopacity')
     }
 }
+
+
+
