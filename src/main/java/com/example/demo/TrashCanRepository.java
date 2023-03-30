@@ -19,13 +19,14 @@ public class TrashCanRepository {
     private TrashCan createTrashCan(ResultSet rs)throws SQLException {
         return new TrashCan(rs.getInt("id"),
                 rs.getString("name"),
-                rs.getInt("trash_category_id"));
+                rs.getInt("trash_category_id"),
+                rs.getString("image"));
     }
     public List<TrashCan> getTrashCans() {
         List<TrashCan> trashCans = new ArrayList<>();
         try (Connection conn = dataSource.getConnection();
              Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT id, name, trash_category_id FROM trashcan")) {
+             ResultSet rs = stmt.executeQuery("SELECT id, name, trash_category_id, image FROM trashcan")) {
 
             while (rs.next()){
                 trashCans.add(createTrashCan(rs));

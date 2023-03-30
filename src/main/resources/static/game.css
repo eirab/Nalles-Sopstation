@@ -50,29 +50,21 @@ body {
 }
 
 .trash-container {
-    width: 800px;
+    width: 900px;
+    height: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: absolute;
     bottom: 20%;
     left: 50%;
-    margin-left: -400px;
-    font-size: 14px;
-    letter-spacing: 1px;
+    margin-left: -450px;
 }
 
 
     .trash {
-        width: 100px;
-        background: purple;
-        padding: 20px;
-        border-radius: 5px;
-        width: 80px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 50px;
+        height: auto;
         cursor: grab;
     }
 
