@@ -33,7 +33,17 @@ body {
 .play-again-btn {
     border-radius: 5px;
     width: 120px;
+    height: 30px;
+    color: white;
     position: absolute;
     bottom: 30%;
+    left: 50%;
     margin-left: -60px;
+    background-color: mediumvioletred;
+    font-size: 20px;
+}
+
+.play-again-btn a {
+    text-decoration: none;
+    color: white;
 }
