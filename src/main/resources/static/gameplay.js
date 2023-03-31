@@ -4,6 +4,16 @@ const Gtext = document.getElementById("gameplay")
 
 let beingDragged;
 
+
+
+trashes.forEach(trash => {
+    let randomX = Math.floor(Math.random() * 83) + 5;
+    let randomY = Math.floor(Math.random() * 83) + 5;
+    trash.style.left = randomX + "%";
+    trash.style.top = randomY + "%";
+
+})
+
 trashcans.forEach(can => {
     can.addEventListener('dragenter', dragEnter)
        can.addEventListener('dragover', dragOver)
@@ -59,6 +69,10 @@ function dragDrop(e) {
         e.target.classList.remove('dragopacity')
     }
 }
+
+
+
+
 
 
 
