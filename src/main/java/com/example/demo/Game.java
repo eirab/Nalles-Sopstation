@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -12,10 +13,14 @@ import org.springframework.stereotype.Component;
 public class Game {
 
     private int score;
+    @Autowired
+    private TrashRepository repository;
 
 
-    public Game() {
+
+    public Game(TrashRepository repository) {
         this.score = 0;
+        this.repository= repository;
     }
 
 
