@@ -44,7 +44,6 @@ function dragDrop(e) {
             .then((response) => response.json())
             .then((score) => {
                 //RESTController returns the new score
-
                 Gtext.innerText = score.message; //Update score
 
 

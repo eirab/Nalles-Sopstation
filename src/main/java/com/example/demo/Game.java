@@ -13,6 +13,7 @@ public class Game {
 
     private int score;
 
+
     public Game() {
         this.score = 0;
     }
@@ -31,4 +32,10 @@ public class Game {
     public int getScore() {
         return score;
     }
+
+    public void numberOfSortedTrash() {
+
+
+    }
+
 }
