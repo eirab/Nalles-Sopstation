@@ -10,30 +10,25 @@
 <audio id="startSong" src="lotNa.mp3" autoplay></audio>
 
 
-
-        <div id="gameplay" text="score">Gameplay</div>
+        <p th:class="point-text">POÄNG:</p>
+        <div th:class="score-text" id="gameplay" text="score">0</div>
 
         <div th:class="black-filter"></div>
-        <div th:class="trashcan-container">
-            <div th:class="trashcan" th:id="1">Kompost</div>
-            <div th:class="trashcan" th:id="2">Plast</div>
-            <div th:class="trashcan" th:id="1">Glas</div>
-            <div th:class="trashcan" th:id="4">Metall</div>
-            <div th:class="trashcan" th:id="5">Kartong</div>
-        </div>
 
-
-        <div th:class="trash-container">
-        <div th:each="trash: ${trashArray}">
-            <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" th:alt="${trash.getName()}" />
-        </div>
-        </div>
 
         <div th:class="trashcan-container">
-                <div th:each="trashCan: ${trashCanArray}">
-                    <div th:class="trashcan" th:text="${trashCan.getName()}" th:id="${trashCan.getTrash_category_id()}"></div>
+            <div th:each="trashCan: ${trashCanArray}">
+                <div th:class="trashcan" th:text="${trashCan.getName()}" th:id="${trashCan.getTrash_category_id()}"></div>
+            </div>
+        </div>
+
+            <div th:class="trash-container">
+                <div th:each="trash: ${trashArray}">
+                    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" th:alt="${trash.getName()}" />
                 </div>
-        </div>
+            </div>
+
+
 
         <script src="/gameplay.js"></script>
         <script src="/sound.js"></script>
