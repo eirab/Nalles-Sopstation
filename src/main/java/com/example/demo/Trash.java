@@ -5,7 +5,6 @@ public class Trash {
     private int trash_id;
     private String name;
     private int trash_category_id;
-
     private String image;
 
 
