@@ -26,11 +26,12 @@ public class ViewController {
 
     @GetMapping("/spel")
     public String getGameplaySite(Model model) {
-
+    
         model.addAttribute("trashArray", trashRepository.getTrash());
         model.addAttribute("trashCanArray",trashCanRepository.getTrashCans());
         return "game";
     }
+
 
 
     @GetMapping("/vinst")
