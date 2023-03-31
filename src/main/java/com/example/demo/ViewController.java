@@ -16,6 +16,9 @@ public class ViewController {
     private TrashCanRepository trashCanRepository;
 
     @Autowired
+    private NewTrashRepository newTrashRepository;
+
+    @Autowired
     private Game game;
 
 
