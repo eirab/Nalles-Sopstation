@@ -47,6 +47,7 @@ function dragDrop(e) {
                 Gtext.innerText = score.message; //Update score
 
 
+
             });
 
         //If not correctly sorted

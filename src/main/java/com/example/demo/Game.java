@@ -13,6 +13,13 @@ import org.springframework.stereotype.Component;
 public class Game {
 
     private int score;
+
+    private int level;
+
+    private int reGenerateMoreTrash;
+
+    //private int countSortedTrashed;
+
     @Autowired
     private TrashRepository repository;
 
@@ -21,6 +28,9 @@ public class Game {
     public Game(TrashRepository repository) {
         this.score = 0;
         this.repository= repository;
+        this.level= 0;
+        //this.countSortedTrashed = 0;
+        this.reGenerateMoreTrash = 0;
     }
 
 
@@ -30,7 +40,10 @@ public class Game {
 
 
     public void generateMoreTrash() {
+        do {
+            this.reGenerateMoreTrash +=5;
 
+        } while (score == 5);
     }
 
 
@@ -39,8 +52,7 @@ public class Game {
     }
 
     public void numberOfSortedTrash() {
-
-
+        //if ( countSortedTrashed > 14);
     }
 
 }
