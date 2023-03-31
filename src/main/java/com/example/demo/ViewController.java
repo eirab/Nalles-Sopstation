@@ -32,7 +32,6 @@ public class ViewController {
         return "game";
     }
 
-
     @GetMapping("/vinst")
     public String getWinSite() {
         return "win";
