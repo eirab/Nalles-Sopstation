@@ -38,7 +38,4 @@ public class TrashRepository {
         }
         return trashes;
     }
-
-
-
 }
