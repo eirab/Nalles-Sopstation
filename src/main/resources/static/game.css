@@ -37,7 +37,7 @@ body {
         justify-content: space-around;
         align-items: center;
         position: absolute;
-        top: 20%;
+        bottom: 3% !important;
         left: 50%;
         margin-left: -450px;
         font-size: 14px;
@@ -45,17 +45,10 @@ body {
 }
 
 .trashcan {
-    width: 150px;
-    height: 80px;
-    background: midnightblue;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    font-size: 14px;
-
+    width: 100px;
 }
+
+
 
 
 
