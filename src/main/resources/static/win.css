@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'MotleyForces';
+    src: url('/MotleyForcesRegular-w1rZ3.ttf')
+}
+
+
 * {
     padding: 0;
     margin: 0;
@@ -17,17 +23,31 @@ body {
     align-items: center
 }
 
+.black-filter {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
 .congrat-text {
     font-size: 30px;
     color: black;
     width: 300px;
     position: absolute;
-    top: 35%;
+    top: 15%;
     left: 50%;
     margin-left: -150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'MotleyForces';
+    text-decoration: uppercase;
+    color: white;
+    letter-spacing: 2px;
 }
 
 .play-again-btn {
@@ -37,7 +57,7 @@ body {
     height: auto;
     color: white;
     position: absolute;
-    bottom: 30%;
+    bottom: 20%;
     left: 50%;
     margin-left: -75px;
     font-size: 22px;
@@ -63,9 +83,10 @@ body {
 }
 
 .price-image {
-    width: 80px;
+    width: 120px;
     position: absolute;
-    top: 60%;
+    top: 30%;
     left: 50%;
-    margin-left: -40px;
+    margin-left: -60px;
+
 }
