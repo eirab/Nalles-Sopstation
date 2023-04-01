@@ -44,14 +44,11 @@ body {
         letter-spacing: 1px;
 }
 
-.trashcan {
-    width: 100px;
-}
 
 
-
-
-
+    .trashcan {
+        width: 80px;
+    }
 
     .trash {
         width: 50px;
@@ -87,8 +84,8 @@ body {
         z-index: 12;
         font-family: "MotleyForces";
         font-size: 24px;
-
     }
+
 
 
 
