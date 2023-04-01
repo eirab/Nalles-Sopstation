@@ -4,7 +4,8 @@ const canvas = document.querySelector('#canvas');
 
 const jsConfetti = new JSConfetti()
 
-
+ var audio = document.getElementById("crowd");
+  audio.play();
 
 
 document.addEventListener("DOMContentLoaded", function() {
