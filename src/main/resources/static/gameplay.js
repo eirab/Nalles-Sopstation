@@ -7,8 +7,8 @@ let beingDragged;
 
 
 trashes.forEach(trash => {
-    let randomX = Math.floor(Math.random() * 83) + 5;
-    let randomY = Math.floor(Math.random() * 83) + 5;
+    let randomX = Math.floor(Math.random() * 83) +5;
+    let randomY = Math.floor(Math.random() * 45) + 5;
     trash.style.left = randomX + "%";
     trash.style.top = randomY + "%";
 
