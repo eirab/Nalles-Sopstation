@@ -19,7 +19,7 @@ public class RESTController {
     public Message correctlySorted() {
         game.updateScore();
         game.numberOfSortedTrash();
-        game.generateMoreTrash();
+        //game.generateMoreTrash();
 
         Message score = new Message(String.valueOf(game.getScore()));
         return score;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/index.css">
@@ -7,8 +7,10 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     <title>Nalles Sopstation</title>
+
 </head>
 <body class="container">
+
 
 <div class="row justify-content-center">
 
@@ -18,7 +20,8 @@
     <a class="btn btn-primary btn-lg shadow" id="play-button" th:href="@{/spel}">PLAY</a>
 </div>
 
-<audio src="NallesSopstationSong.mp3" autoplay loop></audio>
+<audio id="startSong" src="lotNa.mp3"></audio>
+<script src="/sound.js"></script>
 
 </body>
 </html>

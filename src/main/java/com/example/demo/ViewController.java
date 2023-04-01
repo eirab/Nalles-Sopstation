@@ -16,6 +16,9 @@ public class ViewController {
     private TrashCanRepository trashCanRepository;
 
     @Autowired
+    private NewTrashRepository newTrashRepository;
+
+    @Autowired
     private Game game;
 
 
@@ -26,11 +29,13 @@ public class ViewController {
 
     @GetMapping("/spel")
     public String getGameplaySite(Model model) {
-
+    
         model.addAttribute("trashArray", trashRepository.getTrash());
         model.addAttribute("trashCanArray",trashCanRepository.getTrashCans());
+        model.addAttribute("newTrashes", trashRepository.getTrash());
         return "game";
     }
+
 
 
     @GetMapping("/vinst")
