@@ -8,13 +8,16 @@
 </head>
 <body>
         <canvas id="canvas"></canvas>
+        <div th:class="black-filter"></div>
         <p th:class="congrat-text">Grattis, du vann!</p>
-
+        <img th:src="'/gold.png'" th:class="price-image"/>
         <button th:class="play-again-btn"><a th:href="'/spel'">Spela igen</a></button>
 
     <script
             src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js">
     </script>
+
+    <audio id="crowd" src="/crowdcheering.mp3"></audio>
     <script src="/win.js"></script>
 </body>
 </html>
