@@ -50,11 +50,15 @@ function dragDrop(e) {
         beingDragged.classList.add('hide')
         e.target.classList.remove('dragopacity')
         //Notify the RESTController that a trash has been correctly sorted
-        fetch("/correctlySorted/?id=1")
+        fetch("/correctlySorted/" + beingDragged.getAttribute("value"))
             .then((response) => response.json())
             .then((score) => {
                 //RESTController returns the new score
                 Gtext.innerText = score.message; //Update score
+                const newTrash = document.createElement("img");
+                newTrash.setAttribute("src", "applecore.png");
+                document.getElementById("trash-div").append(newTrash);
+
 
 
 

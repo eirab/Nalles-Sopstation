@@ -57,6 +57,7 @@ public class TrashRepository {
     }
 
     public Trash getOneTrash(){
+
         return getTrash(1).get(0);
     }
 
