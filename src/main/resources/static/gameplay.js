@@ -50,7 +50,7 @@ function dragDrop(e) {
         beingDragged.classList.add('hide')
         e.target.classList.remove('dragopacity')
         //Notify the RESTController that a trash has been correctly sorted
-        fetch("/correctlySorted")
+        fetch("/correctlySorted/?id=1")
             .then((response) => response.json())
             .then((score) => {
                 //RESTController returns the new score

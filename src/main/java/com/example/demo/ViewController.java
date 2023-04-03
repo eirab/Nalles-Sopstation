@@ -19,9 +19,6 @@ public class ViewController {
     private TrashCanRepository trashCanRepository;
 
     @Autowired
-    private NewTrashRepository newTrashRepository;
-
-    @Autowired
     private Game game;
 
 
@@ -33,21 +30,10 @@ public class ViewController {
     @GetMapping("/spel")
     public String getGameplaySite(Model model) {
 
-        /*Lista med all trash som finns i databasen: */
-        ArrayList<Trash> allTrash = (ArrayList<Trash>) trashRepository.getTrash();
-
-        /*Blandar om listan så att trashet ligger huller om buller: */
-        Collections.shuffle(allTrash);
-
-        /*Ny lista samt en for-loop som lägger in 5 stycken trash i den nya listan*/
-        ArrayList<Trash> fiveTrash = new ArrayList<>();
-
-        for (int i = 0; i < 5; i++) {
-            fiveTrash.add(allTrash.get(i));
-        }
 
 
-        model.addAttribute("trashArray", fiveTrash);
+
+        model.addAttribute("trashArray", game.getCurrentTrash());
         model.addAttribute("trashCanArray",trashCanRepository.getTrashCans());
 
         return "game";
