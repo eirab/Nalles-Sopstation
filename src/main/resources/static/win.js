@@ -5,10 +5,11 @@ const canvas = document.querySelector('#canvas');
 const jsConfetti = new JSConfetti()
 
  var audio = document.getElementById("crowd");
-  audio.play();
+ audio.play();
 
 
 document.addEventListener("DOMContentLoaded", function() {
+
  timeout = setTimeout(startConfetti, 700);
  timeout = setTimeout(startConfetti, 1100);
  timeout = setTimeout(startConfetti, 1500);
@@ -16,4 +17,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function startConfetti() {
     jsConfetti.addConfetti();
+
 }
