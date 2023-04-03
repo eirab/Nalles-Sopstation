@@ -2,11 +2,10 @@ const button = document.querySelector('#button');
 
 const canvas = document.querySelector('#canvas');
 
-const jsConfetti = new JSConfetti()
+const jsConfetti = new JSConfetti();
 
- var audio = document.getElementById("crowd");
+ const audio = new Audio("/crowdcheering.mp3");
  audio.play();
-
 
 document.addEventListener("DOMContentLoaded", function() {
 
