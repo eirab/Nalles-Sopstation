@@ -13,7 +13,7 @@ INSERT INTO TRASH ( name, trash_category_id ,image) VALUES ( 'plastic bag', 2, '
 INSERT INTO TRASH ( name, trash_category_id ,image) VALUES ( 'news paper', 5, '/news.png');
 
 INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Kompost', 1, '/kompostkorg.png');
-INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Plast', 2, '/plasttunna.png');
-INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Glas', 3, '/trashcan-metall.png');
+INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Plast', 2, '/trashcan-plast.png');
+INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Glas', 3, '/trashcan-glas1.png');
 INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Metall', 4, '/trashcan-metall.png');
 INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Papperförpackningar',5, '/kartongkorg.png');
