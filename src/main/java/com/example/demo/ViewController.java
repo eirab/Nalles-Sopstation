@@ -18,8 +18,7 @@ public class ViewController {
     @Autowired
     private TrashCanRepository trashCanRepository;
 
-    @Autowired
-    private NewTrashRepository newTrashRepository;
+
 
     @Autowired
     private Game game;
@@ -53,11 +52,19 @@ public class ViewController {
         return "game";
     }
 
+
     @GetMapping("/vinst")
     public String getWinSite() {
+
         return "win";
     }
 
+
+    @GetMapping("/level2")
+    public String getLevel2() {
+
+        return "level2";
+    }
 
 }
 
