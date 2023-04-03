@@ -3,6 +3,7 @@ const trashes = document.querySelectorAll('.trash')
 const Gtext = document.getElementById("gameplay")
 
 let beingDragged;
+let count = 0;
 
 
 
@@ -46,6 +47,7 @@ function dragStart(e) {
 function dragDrop(e) {
     //If trash is correctly sorted
     if(e.target.id === beingDragged.id) {
+    count++;
         //Make the trash disappear
         beingDragged.classList.add('hide')
         e.target.classList.remove('dragopacity')
@@ -58,12 +60,20 @@ function dragDrop(e) {
         fetch("/correctlySorted")
             .then((response) => response.json())
             .then((score) => {
+            if(count === 5) {
+            console.log("hej")
+            document.location.href =  "/level2"
+            }
+
+
                 //RESTController returns the new score
                 Gtext.innerText = score.message; //Update score
 
 
 
             });
+
+
 
         //If not correctly sorted
     } else {
