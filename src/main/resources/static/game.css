@@ -32,7 +32,7 @@ body {
 }
 
 .trashcan-container {
-        width: 900px;
+        width: 1200px;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -47,11 +47,11 @@ body {
 
 
     .trashcan {
-        width: 80px;
+        height: 300px;
     }
 
     .trash {
-        width: 50px;
+        width: 120px;
         height: auto;
         cursor: grab;
         position: absolute;
