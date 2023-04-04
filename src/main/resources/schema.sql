@@ -6,7 +6,6 @@ CREATE TABLE TRASHCATEGORY (
 
 CREATE TABLE TRASH(
     id int  AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50),
     trash_category_id int REFERENCES TRASHCATEGORY(id),
     image VARCHAR(50)
 );

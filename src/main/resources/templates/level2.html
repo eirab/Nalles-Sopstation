@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet"  href="/level2.css" th:href="'/level2.css'"/>
+    <link rel="stylesheet"  href="/css/spel2.css" th:href="'/css/spel2.css'"/>
     <title>Nalles Sopstation</title>
-    <audio id="startSong" src="lotNa.mp3" autoplay></audio>
-
-
 </head>
 <body>
+
 
 <p th:class="point-text">POÄNG:</p>
 <div th:class="score-text" id="gameplay" text="score">0</div>
@@ -17,7 +15,7 @@
 
 <div th:class="black-filter"></div>
 <div th:each="trash: ${trashArray}">
-    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" th:alt="${trash.getName()}" />
+    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" />
 </div>
 
 <div th:class="trashcan-container">
