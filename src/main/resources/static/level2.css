@@ -47,7 +47,8 @@ body {
 
 
     .trashcan {
-        width: 80px;
+
+       width: 80px;
     }
 
     .trash {
@@ -75,6 +76,7 @@ body {
         z-index: 12;
         color: white;
     }
+
 
     #gameplay {
         position: absolute;
