@@ -9,8 +9,10 @@
     box-sizing: border-box;
 }
 
+
+
 body {
-    background-image: url(background.png);
+    background-image: url('https://cdn.pixabay.com/photo/2015/12/27/21/11/beach-1110498_1280.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -20,6 +22,7 @@ body {
     overflow-y: hidden;
     overflow-x: hidden;
 }
+
 
 .black-filter {
     width: 100vw;
@@ -85,11 +88,5 @@ body {
         font-family: "MotleyForces";
         font-size: 24px;
     }
-
-
-
-
-
-
 
 
