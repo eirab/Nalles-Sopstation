@@ -44,6 +44,7 @@ function dragDrop(e) {
   //If trash is correctly sorted
   if (e.target.id === beingDragged.id) {
     count++;
+
     //Make the trash disappear
     beingDragged.classList.add('hide');
     e.target.classList.remove('dragopacity');
@@ -79,3 +80,41 @@ function dragDrop(e) {
     e.target.classList.remove('dragopacity');
   }
 }
+//Make the trash disappear
+        beingDragged.classList.add('hide')
+        e.target.classList.remove('dragopacity')
+        //Notify the RESTController that a trash has been correctly sorted
+        fetch("/correctlySorted")
+            .then((response) => response.json())
+            .then((score) => {
+            if(count === 5) {
+            console.log("hej")
+            document.location.href =  "/level3"
+            }
+
+
+                //RESTController returns the new score
+                Gtext.innerText = score.message; //Update score
+
+
+
+            });
+
+
+
+        //If not correctly sorted
+    } else {
+        fetch("/incorrectlySorted").then((response) => response.json()).then((data) => {
+            console.log(data.message)
+
+        });
+        e.target.classList.remove('dragopacity')
+    }
+}
+
+
+
+
+
+
+

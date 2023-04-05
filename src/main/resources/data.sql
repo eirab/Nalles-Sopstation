@@ -17,6 +17,7 @@ INSERT INTO TRASH (trash_category_id, image) VALUES
 (5, 'trashes/2-box.png');
 
 
+
 INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Kompost', 1, '/trashcans/kompostkorg.png');
 INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Plast', 2, '/trashcans/trashcan-plastic.png');
 INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Glas', 3, '/trashcans/trashcan-glas.png');

@@ -21,8 +21,10 @@
 
 
 
-                <div th:each="trash: ${trashArray}">
-                    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" />
+
+                <div th:id="trash-div" th:each="trash: ${trashArray}">
+                    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" th:value="${trash.getTrash_id()}" />
+
                 </div>
 
 

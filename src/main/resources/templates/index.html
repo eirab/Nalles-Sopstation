@@ -2,23 +2,43 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/index.css">
+
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="/css/startpage.css" th:href="'/css/startpage.css'" />
     <title>Nalles Sopstation</title>
 
 </head>
 <body class="container">
 
+<img th:src="'/trashes/2-box.png'"  th:class="box"/>
+<img th:src="'/trashes/5-newspaper.png'" th:class="newspaper" />
+<img th:src="'/trashes/1-apple.png'" th:class="apple" />
+<img th:src="'/trashes/10-tin.png'" th:class="tin" />
+<img th:src="'/trashes/12-spraycan.png'" th:class="spraycan" />
 
 <div class="row justify-content-center">
 
     <img id="logo" src="/nalle.png" alt="">
     </div>
 <div class="row justify-content-center">
-    <a class="btn btn-primary btn-lg shadow" id="play-button" th:href="@{/spel}">PLAY</a>
+    <a class="btn btn-primary btn-lg shadow" id="play-button" th:href="@{/spel}">SPELA</a>
 </div>
+<div th:class="rules-button">
+    <a>REGLER</a>
+</div>
+
+<div th:class="popup" th:id="popup">
+    <p th:class="popup-heading">Spela så här</p>
+    <p th:class="instructions">
+        Hjälp Nalle att rädda planeten genom att sopsortera alla sopor!
+        Klicka på skräpet och håll nere vänster musknapp för att plocka upp skräpet.
+        Dra det till rätt soptunna och släpp sedan musknappen för att släppa ned skräpet i soptunnan.
+    </p>
+    <p th:id="ok-btn">OK</p>
+</div>
+
 
 <script src="/sound.js"></script>
 <script src="/gameplay.js"></script>
