@@ -1,59 +1,175 @@
 @font-face {
-   font-family: 'MotleyForces';
-   src: url('/MotleyForcesRegular-w1rZ3.ttf')
+  font-family: 'MotleyForces';
+  src: url('/MotleyForcesRegular-w1rZ3.ttf')
 }
+
+
 
 
 body {
-    background-color: #2d90a6;
-    width: 100%;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: hidden;
+   background-color: #2d90a6;
+   width: 100%;
+   height: 100vh;
+   overflow-x: hidden;
+   overflow-y: hidden;
 }
+
 
 #play-button {
-    border-radius: 90px;
-    border: 4px solid white;
-    width: 130px;
-    height: auto;
-    color: white;
-    position: absolute;
-    bottom: 29%;
-    left: 50%;
-    margin-left: -60.5px;
-    font-size: 22px;
-    padding: 6px 6px;
-    background-color: transparent;
-    outline: none;
-    opacity: 0.7;
-    transition: 0.5s;
+   border-radius: 90px;
+   border: 4px solid white;
+   width: 130px;
+   height: auto;
+   color: white;
+   position: absolute;
+   bottom: 29%;
+   left: 50%;
+   margin-left: -60.5px;
+   font-size: 22px;
+   padding: 6px 6px;
+   background-color: transparent;
+   outline: none;
+   opacity: 0.7;
+   transition: 0.5s;
 }
 
+
 #play-button:hover, .rules-button:hover {
-    color: white;
-    border-color: white;
-    text-shadow: 0 0 6px white;
-    box-shadow: 0 0 16px white;
-    opacity: 1;
+   color: white;
+   border-color: white;
+   text-shadow: 0 0 6px white;
+   box-shadow: 0 0 16px white;
+   opacity: 1;
 }
+
+
 
 
 #play-button a, .rules-button a {
-    text-decoration: none;
-    color: white;
+   text-decoration: none;
+   color: white;
 }
 
+
 .rules-button {
+   border-radius: 90px;
+   border: 4px solid white;
+   width: 130px;
+   height: auto;
+   color: white;
+   position: absolute;
+   bottom: 16%;
+   left: 50%;
+   margin-left: -60.5px;
+   font-size: 22px;
+   padding: 6px 6px;
+   background-color: transparent;
+   outline: none;
+   opacity: 0.7;
+   transition: 0.5s;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+}
+
+
+
+
+#logo {
+   padding-top: 5%;
+   align-self: center;
+   width: 28%;
+   box-shadow: darkslategrey;
+
+
+}
+
+
+
+
+.box {
+   position: absolute;
+   bottom: -10%;
+   left: -2%;
+   width: 18%;
+   height: auto;
+   transform: rotate(15deg);
+}
+
+
+.newspaper {
+   position: absolute;
+   bottom: 30%;
+   left: 23%;
+   width: 8%;
+}
+
+
+.tin {
+   width: 10%;
+   position:absolute;
+   top: 20%;
+   left: 10%;
+   transform: scaleX(-1);
+}
+
+
+.apple {
+   width: 10%;
+   position: absolute;
+   right: 10%;
+   top: 30%;
+   transform: rotate(40deg);
+}
+
+
+.spraycan {
+   width: 9%;
+   position: absolute;
+   right: 18%;
+   top: 62%;
+   transform: scaleX(-1);
+}
+
+
+#popup {
+   width: 360px;
+   height: 400px;
+   position: absolute;
+   top: -100%;
+   left: 50%;
+   margin-left: -170px;
+   background: #2d90a6;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   padding: 10px;
+   color: white;
+}
+
+
+.dropdown {
+   top: 20%!important;
+}
+
+
+.popup-heading {
+   font-family: "MotleyForces";
+   font-size: 22px;
+   text-transform: uppercase;
+   letter-spacing: 1.5px;
+}
+
+
+#ok-btn {
     border-radius: 90px;
     border: 4px solid white;
     width: 130px;
     height: auto;
     color: white;
-    position: absolute;
-    bottom: 16%;
-    left: 50%;
-    margin-left: -60.5px;
     font-size: 22px;
     padding: 6px 6px;
     background-color: transparent;
@@ -64,115 +180,23 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    margin-top: 10px;
 }
 
-
-#logo {
-    padding-top: 5%;
-    align-self: center;
-    width: 28%;
-    box-shadow: darkslategrey;
-
-}
-
-
-.box {
-    position: absolute;
-    bottom: -10%;
-    left: -2%;
-    width: 18%;
-    height: auto;
-    transform: rotate(15deg);
-}
-
-.newspaper {
-    position: absolute;
-    bottom: 30%;
-    left: 23%;
-    width: 8%;
-}
-
-.tin {
-    width: 10%;
-    position:absolute;
-    top: 20%;
-    left: 10%;
-    transform: scaleX(-1);
-}
-
-.apple {
-    width: 10%;
-    position: absolute;
-    right: 10%;
-    top: 30%;
-    transform: rotate(40deg);
-}
-
-.spraycan {
-    width: 9%;
-    position: absolute;
-    right: 18%;
-    top: 62%;
-    transform: scaleX(-1);
-}
-
-#popup {
-    width: 360px;
-    height: 400px;
-    position: absolute;
-    top: -100%;
-    left: 50%;
-    margin-left: -170px;
-    background: #2d90a6;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px;
-    color: white;
-}
-
-.dropdown {
-    top: 20%!important;
-}
-
-.popup-heading {
-    font-family: "MotleyForces";
-    font-size: 22px;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-#ok-btn {
-     border-radius: 90px;
-     border: 4px solid white;
-     width: 130px;
-     height: auto;
-     color: white;
-     font-size: 22px;
-     padding: 6px 6px;
-     background-color: transparent;
-     outline: none;
-     opacity: 0.7;
-     transition: 0.5s;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     cursor: pointer;
-     margin-top: 10px;
-}
 
 #ok-btn:hover {
-    color: white;
-    border-color: white;
-    text-shadow: 0 0 6px white;
-    box-shadow: 0 0 16px white;
-    opacity: 1;
+   color: white;
+   border-color: white;
+   text-shadow: 0 0 6px white;
+   box-shadow: 0 0 16px white;
+   opacity: 1;
 }
+
 
 .instructions {
-     width: 300px;
-     font-size: 20px;
+    width: 300px;
+    font-size: 20px;
+
 
 }
+
