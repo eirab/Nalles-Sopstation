@@ -93,7 +93,7 @@ public class ViewController {
         model.addAttribute("trashCanArray", trashCanRepository.getTrashCans());
 
         return "level3";
-    }
+    }}
 
-}
+
 
