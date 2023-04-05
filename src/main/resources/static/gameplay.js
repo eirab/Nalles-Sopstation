@@ -51,6 +51,11 @@ function dragDrop(e) {
         //Make the trash disappear
         beingDragged.classList.add('hide')
         e.target.classList.remove('dragopacity')
+
+        // Play the correct trash sound
+            const correctTrashSound = document.getElementById("trashSound");
+            correctTrashSound.play();
+
         //Notify the RESTController that a trash has been correctly sorted
         fetch("/correctlySorted")
             .then((response) => response.json())
@@ -72,7 +77,13 @@ function dragDrop(e) {
 
         //If not correctly sorted
     } else {
-        fetch("/incorrectlySorted").then((response) => response.json()).then((data) => {
+     // Play the error sound
+            const errorSound = document.getElementById("errorSound");
+            errorSound.play();
+
+        fetch("/incorrectlySorted")
+        .then((response) => response.json())
+        .then((data) => {
             console.log(data.message)
 
         });

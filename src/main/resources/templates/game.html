@@ -20,7 +20,7 @@
 
 
                 <div th:each="trash: ${trashArray}">
-                    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" th:alt="${trash.getName()}" />
+                    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" />
                 </div>
 
 
@@ -33,5 +33,8 @@
 
         <script src="/gameplay.js"></script>
         <script src="/sound.js"></script>
+<audio id="errorSound" src="wrongS.mp3"></audio>
+<audio id="trashSound" src="trash.mp3"></audio>
+
 </body>
 </html>

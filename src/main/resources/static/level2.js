@@ -57,7 +57,7 @@ function dragDrop(e) {
             .then((score) => {
             if(count === 5) {
             console.log("hej")
-            document.location.href =  "/level2"
+            document.location.href =  "/level3"
             }
 
 

@@ -4,16 +4,21 @@ INSERT INTO TRASHCATEGORY (name) VALUES ('Glas');
 INSERT INTO TRASHCATEGORY (name) VALUES ('Metall');
 INSERT INTO TRASHCATEGORY (name) VALUES ('Pappersförpackningar');
 
-INSERT INTO TRASH ( name, trash_category_id, image) VALUES ( 'apple', 1, '/applecore.png');
-INSERT INTO TRASH ( name, trash_category_id, image) VALUES ( 'plastic bottle', 2, '/pastic.png');
-INSERT INTO TRASH ( name, trash_category_id, image) VALUES ( 'bread', 1, '/mouldybread.png');
-INSERT INTO TRASH ( name, trash_category_id ,image) VALUES ( 'metal jar', 4, '/metal-burk2.png');
-INSERT INTO TRASH ( name, trash_category_id ,image) VALUES ( 'paper', 5, '/boxpng.png');
-INSERT INTO TRASH ( name, trash_category_id ,image) VALUES ( 'plastic bag', 2, '/plastic-bag.png');
-INSERT INTO TRASH ( name, trash_category_id ,image) VALUES ( 'news paper', 5, '/news.png');
+INSERT INTO TRASH (trash_category_id, image) VALUES
+(1, '/trashes/1-apple.png'),
+(1, 'trashes/4-bread.png'),
+(1, 'trashes/9-watermelon.png'),
+(1, 'trashes/17-pear.png'),
+(2, 'trashes/6-plasticbottle.png'),
+(2, 'trashes/7-plasticbag.png'),
+(2, 'trashes/8-toothpaste.png'),
+(2, 'trashes/15-soapbottle.png'),
+(2, 'trashes/18-plasticfork.png'),
+(5, 'trashes/2-box.png');
 
-INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Kompost', 1, '/kompostkorg.png');
-INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Plast', 2, '/trashcan-plast.png');
-INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Glas', 3, '/trashcan-glas1.png');
-INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Metall', 4, '/trashcan-metall.png');
-INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Papperförpackningar',5, '/kartongkorg.png');
+
+INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Kompost', 1, '/trashcans/kompostkorg.png');
+INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Plast', 2, '/trashcans/trashcan-plastic.png');
+INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Glas', 3, '/trashcans/trashcan-glas.png');
+INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Metall', 4, '/trashcans/trashcan-metall.png');
+INSERT INTO TRASHCAN ( name, trash_category_id, image) VALUES ( 'Papperförpackningar',5, '/trashcans/trashcan-cartons.png');
