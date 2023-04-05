@@ -18,15 +18,15 @@ body {
 #play-button {
    border-radius: 90px;
    border: 4px solid white;
-   width: 130px;
+   width: 200px;
    height: auto;
    color: white;
    position: absolute;
-   bottom: 29%;
+   bottom: 40%;
    left: 50%;
-   margin-left: -60.5px;
-   font-size: 22px;
-   padding: 6px 6px;
+   margin-left: -100px;
+   font-size: 26px;
+   padding: 8px 8px;
    background-color: transparent;
    outline: none;
    opacity: 0.7;
@@ -54,15 +54,15 @@ body {
 .rules-button {
    border-radius: 90px;
    border: 4px solid white;
-   width: 130px;
+   width: 200px;
    height: auto;
    color: white;
    position: absolute;
-   bottom: 16%;
+   bottom: 32%;
    left: 50%;
-   margin-left: -60.5px;
-   font-size: 22px;
-   padding: 6px 6px;
+   margin-left: -100px;
+   font-size: 26px;
+   padding: 8px 8px;
    background-color: transparent;
    outline: none;
    opacity: 0.7;
@@ -77,12 +77,10 @@ body {
 
 
 #logo {
-   padding-top: 5%;
+   padding-top: 15%;
    align-self: center;
-   width: 28%;
+   width: 45%;
    box-shadow: darkslategrey;
-
-
 }
 
 
@@ -134,31 +132,31 @@ body {
 
 
 #popup {
-   width: 360px;
-   height: 400px;
+   width: 600px;
+   height: 800px;
    position: absolute;
    top: -100%;
    left: 50%;
-   margin-left: -170px;
+   margin-left: -300px;
    background: #2d90a6;
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
    display: flex;
    flex-direction: column;
    justify-content: flex-start;
    align-items: center;
-   padding: 10px;
+   padding: 30px;
    color: white;
 }
 
 
 .dropdown {
-   top: 20%!important;
+   top: 12%!important;
 }
 
 
 .popup-heading {
    font-family: "MotleyForces";
-   font-size: 22px;
+   font-size: 26px;
    text-transform: uppercase;
    letter-spacing: 1.5px;
 }
@@ -194,9 +192,93 @@ body {
 
 
 .instructions {
-    width: 300px;
-    font-size: 20px;
+    width: 400px;
+    font-size: 25px;
+}
 
 
+@media screen and (max-width: 1700px) {
+    #logo {
+       padding-top: 5%;
+       align-self: center;
+       width: 28%;
+       box-shadow: darkslategrey;
+    }
+
+
+    #play-button {
+       border-radius: 90px;
+       border: 4px solid white;
+       width: 130px;
+       height: auto;
+       color: white;
+       position: absolute;
+       bottom: 29%;
+       left: 50%;
+       margin-left: -60.5px;
+       font-size: 22px;
+       padding: 6px 6px;
+       background-color: transparent;
+       outline: none;
+       opacity: 0.7;
+       transition: 0.5s;
+    }
+
+
+    .rules-button {
+       border-radius: 90px;
+       border: 4px solid white;
+       width: 130px;
+       height: auto;
+       color: white;
+       position: absolute;
+       bottom: 16%;
+       left: 50%;
+       margin-left: -60.5px;
+       font-size: 22px;
+       padding: 6px 6px;
+       background-color: transparent;
+       outline: none;
+       opacity: 0.7;
+       transition: 0.5s;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       cursor: pointer;
+    }
+
+
+    #popup {
+       width: 360px;
+       height: 400px;
+       position: absolute;
+       top: -100%;
+       left: 50%;
+       margin-left: -170px;
+       background: #2d90a6;
+       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       align-items: center;
+       padding: 10px;
+       color: white;
+    }
+
+    .dropdown {
+       top: 20%!important;
+    }
+
+    .popup-heading {
+       font-family: "MotleyForces";
+       font-size: 22px;
+       text-transform: uppercase;
+       letter-spacing: 1.5px;
+    }
+
+    .instructions {
+        width: 300px;
+        font-size: 20px;
+    }
 }
 
