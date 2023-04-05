@@ -83,6 +83,7 @@ public class ViewController {
     }
 
 
+
     @GetMapping("/level3")
     public String getLevel3(Model model) {
 
@@ -106,15 +107,5 @@ public class ViewController {
         return "level3";
     }
 
-
-
-
-    @GetMapping("/level1")
-    public String level1() {
-
-        return "level1";
-    }
-
-}
 
 
