@@ -5,17 +5,19 @@
     <link rel="stylesheet"  href="/game.css" th:href="'/game.css'"/>
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     <title>Nalles Sopstation</title>
+    <audio id="startSong" src="lotNa.mp3" autoplay></audio>
 </head>
 <body>
-<audio id="startSong" src="lotNa.mp3" autoplay></audio>
-
 
         <p th:class="point-text">POÄNG:</p>
         <div th:class="score-text" id="gameplay" text="score">0</div>
 
         <div th:class="black-filter"></div>
 
-
+        <div id="audio-controls">
+            <button id="mute-button">Mute</button>
+            <label for="volume-slider"></label><input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+        </div>
 
 
 

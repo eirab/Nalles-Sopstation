@@ -31,6 +31,41 @@ body {
 
 }
 
+#audio-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  float: right;
+  z-index: 1;
+}
+#mute-button {
+  font-size: 16px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ddd;
+  margin-right: 10px;
+}
+
+#volume-slider {
+  width: 100px;
+  height: 10px;
+  margin-right: 10px;
+  -webkit-appearance: none;
+  background-color: #ddd;
+  outline: none;
+}
+
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #555;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .trashcan-container {
         width: 1100px;
         display: flex;
@@ -43,7 +78,6 @@ body {
         font-size: 14px;
         letter-spacing: 1px;
 }
-
 
 
     .trashcan {
