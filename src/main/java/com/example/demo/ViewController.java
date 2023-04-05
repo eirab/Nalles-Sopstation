@@ -82,24 +82,5 @@ public class ViewController {
         return "level2";
     }
 
-
-    @GetMapping("/level1")
-    public String level1(Model model) {
-
-        ArrayList<Trash> allTrash = (ArrayList<Trash>) trashRepository.getTrash();
-        Collections.shuffle(allTrash);
-
-        ArrayList<Trash> fiveTrash = new ArrayList<>();
-
-        for (int i = 0; i < 5; i++) {
-            fiveTrash.add(allTrash.get(i));
-        }
-
-
-        model.addAttribute("trashArray", fiveTrash);
-        model.addAttribute("trashCanArray",trashCanRepository.getTrashCans());
-
-        return "level1";
-    }
 }
 
