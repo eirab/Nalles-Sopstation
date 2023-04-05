@@ -19,7 +19,6 @@ public class ViewController {
     private TrashCanRepository trashCanRepository;
 
 
-
     @Autowired
     private Game game;
 
@@ -47,7 +46,7 @@ public class ViewController {
 
 
         model.addAttribute("trashArray", fiveTrash);
-        model.addAttribute("trashCanArray",trashCanRepository.getTrashCans());
+        model.addAttribute("trashCanArray", trashCanRepository.getTrashCans());
 
         return "game";
     }
@@ -77,11 +76,10 @@ public class ViewController {
 
 
         model.addAttribute("trashArray", fiveTrash);
-        model.addAttribute("trashCanArray",trashCanRepository.getTrashCans());
+        model.addAttribute("trashCanArray", trashCanRepository.getTrashCans());
 
         return "level2";
     }
-
 
 
     @GetMapping("/level3")
@@ -102,10 +100,10 @@ public class ViewController {
 
         }
         model.addAttribute("trashArray", fiveTrash);
-        model.addAttribute("trashCanArray",trashCanRepository.getTrashCans());
+        model.addAttribute("trashCanArray", trashCanRepository.getTrashCans());
 
         return "level3";
     }
 
-
+}
 
