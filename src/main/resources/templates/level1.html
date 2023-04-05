@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet"  href="/level1.css" th:href="'/level1.css'"/>
+    <title>Nalles Sopstation</title>
+
+
+</head>
+<body>
+
+    <p th:class="point-text">POÄNG:</p>
+    <div th:class="score-text" id="gameplay" text="score">0</div>
+
+
+
+    <div th:class="black-filter"></div>
+    <div th:each="trash: ${trashArray}">
+        <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" />
+    </div>
+
+
+    <script src="/level1.js"></script>
+    <script src="/gameplay.js"></script>
+
+</body>
+</html>

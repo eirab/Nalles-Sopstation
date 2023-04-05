@@ -18,6 +18,7 @@ public class ViewController {
     @Autowired
     private TrashCanRepository trashCanRepository;
 
+
     @Autowired
     private Game game;
 
@@ -36,14 +37,63 @@ public class ViewController {
         model.addAttribute("trashArray", game.getCurrentTrash());
         model.addAttribute("trashCanArray",trashCanRepository.getTrashCans());
 
+
         return "game";
     }
 
+
     @GetMapping("/vinst")
     public String getWinSite() {
+
         return "win";
     }
 
+
+    @GetMapping("/level2")
+    public String getLevel2(Model model) {
+        /*Lista med all trash som finns i databasen: */
+        ArrayList<Trash> allTrash = (ArrayList<Trash>) trashRepository.getTrash();
+
+        /*Blandar om listan så att trashet ligger huller om buller: */
+        Collections.shuffle(allTrash);
+
+        /*Ny lista samt en for-loop som lägger in 5 stycken trash i den nya listan*/
+        ArrayList<Trash> fiveTrash = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            fiveTrash.add(allTrash.get(i));
+        }
+
+
+        model.addAttribute("trashArray", fiveTrash);
+        model.addAttribute("trashCanArray", trashCanRepository.getTrashCans());
+
+        return "level2";
+    }
+
+
+    @GetMapping("/level3")
+    public String getLevel3(Model model) {
+
+        /*Lista med all trash som finns i databasen: */
+        ArrayList<Trash> allTrash = (ArrayList<Trash>) trashRepository.getTrash();
+
+        /*Blandar om listan så att trashet ligger huller om buller: */
+        Collections.shuffle(allTrash);
+
+        /*Ny lista samt en for-loop som lägger in 5 stycken trash i den nya listan*/
+
+        ArrayList<Trash> fiveTrash = new ArrayList<>();
+
+        for (int i = 0; i < 5; i++) {
+            fiveTrash.add(allTrash.get(i));
+
+        }
+        model.addAttribute("trashArray", fiveTrash);
+        model.addAttribute("trashCanArray", trashCanRepository.getTrashCans());
+
+        return "level3";
+    }
 
 }
 

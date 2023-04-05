@@ -17,9 +17,11 @@ public class RESTController {
     private Game game;
 
 
+
     @GetMapping(value = "/correctlySorted/{id}" , produces = MediaType.APPLICATION_JSON_VALUE)
     public Message correctlySorted(@PathVariable String id) {
         game.updateGame(Integer.parseInt(id));
+
 
 
         Message score = new Message(String.valueOf(game.getScore()));
