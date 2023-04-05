@@ -160,6 +160,7 @@ body {
      justify-content: center;
      align-items: center;
      cursor: pointer;
+     margin-top: 10px;
 }
 
 #ok-btn:hover {
@@ -168,4 +169,10 @@ body {
     text-shadow: 0 0 6px white;
     box-shadow: 0 0 16px white;
     opacity: 1;
+}
+
+.instructions {
+     width: 300px;
+     font-size: 20px;
+
 }
