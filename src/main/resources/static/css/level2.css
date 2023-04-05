@@ -9,10 +9,9 @@
     box-sizing: border-box;
 }
 
-
-
 body {
-    background-image: url('https://cdn.pixabay.com/photo/2015/12/27/21/11/beach-1110498_1280.jpg');
+
+    background-image: url(background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -23,7 +22,6 @@ body {
     overflow-x: hidden;
 }
 
-
 .black-filter {
     width: 100vw;
     height: 100vh;
@@ -32,6 +30,41 @@ body {
     top: 0;
     left: 0;
 
+}
+
+#audio-controls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  float: right;
+  z-index: 1;
+}
+#mute-button {
+  font-size: 16px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ddd;
+  margin-right: 10px;
+}
+
+#volume-slider {
+  width: 100px;
+  height: 10px;
+  margin-right: 10px;
+  -webkit-appearance: none;
+  background-color: #ddd;
+  outline: none;
+}
+
+#volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #555;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .trashcan-container {
@@ -46,8 +79,6 @@ body {
         font-size: 14px;
         letter-spacing: 1px;
 }
-
-
 
     .trashcan {
         width: 180px;
@@ -88,5 +119,11 @@ body {
         font-family: "MotleyForces";
         font-size: 24px;
     }
+
+
+
+
+
+
 
 

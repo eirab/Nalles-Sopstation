@@ -56,7 +56,7 @@ function dragDrop(e) {
             .then((response) => response.json())
             .then((score) => {
             if(count === 5) {
-            document.location.href =  "/vinst"
+            document.location.href = "/vinst"
             }
 
 
