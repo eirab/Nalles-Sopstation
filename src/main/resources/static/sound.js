@@ -1,10 +1,9 @@
+const startSong = document.getElementById('startSong');
+const muteButton = document.getElementById('mute-button');
+const volumeSlider = document.getElementById('volume-slider');
 
-  const startSong = document.getElementById('startSong');
-  const muteButton = document.getElementById('mute-button');
-  const volumeSlider = document.getElementById('volume-slider');
-
-   var audio = document.getElementById("startSong");
-    audio.play();
+var audio = document.getElementById("startSong");
+audio.play();
 
 // mute button
 muteButton.addEventListener("click", () => {
@@ -18,7 +17,7 @@ muteButton.addEventListener("click", () => {
 });
 
 // volume control
-volumeSlider.addEventListener("input", () => {
-  const volume = volumeSlider.value / 100;
+ volumeSlider.addEventListener("input", () => {
+ const volume = parseFloat(volumeSlider.value);
   audio.volume = volume;
-});
+ });
