@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="favicon.png" type="image/png">
     <link rel="stylesheet"  href="/css/level3.css" th:href="'/css/level3.css'"/>
+
     <title>Nalles Sopstation</title>
+    <audio id="startSong" src="lotNa.mp3" autoplay></audio>
 </head>
 <body>
 
@@ -12,10 +14,15 @@
 <p th:class="point-text">POÄNG:</p>
 <div th:class="score-text" id="gameplay" text="score">10</div>
 
+<div id="audio-controls">
+    <button id="mute-button">LJUD AV</button>
+    <label for="volume-slider"></label><input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
+</div>
 
 <div th:class="black-filter"></div>
-<div th:each="trash: ${trashArray}">
-    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" />
+<div th:id="trash-div" th:each="trash: ${trashArray}">
+    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" th:value="${trash.getTrash_id()}" />
+
 </div>
 
 <div th:class="trashcan-container">
@@ -24,10 +31,7 @@
     </div>
 </div>
 
-
 <script src="/level3.js"></script>
-
-<script src="/gameplay.js"></script>
 <script src="/sound.js"></script>
 <audio id="errorSound" src="wrongS.mp3"></audio>
 <audio id="trashSound" src="trash.mp3"></audio>

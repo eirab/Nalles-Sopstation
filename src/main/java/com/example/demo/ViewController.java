@@ -25,10 +25,10 @@ public class ViewController {
 
     @GetMapping("/")
     public String start(Model model) {
-        return "index";
+        return "start";
     }
 
-    @GetMapping("/spel")
+    @GetMapping("/level1")
     public String getGameplaySite(Model model) {
 
 
@@ -38,7 +38,7 @@ public class ViewController {
         model.addAttribute("trashCanArray",trashCanRepository.getTrashCans());
 
 
-        return "game";
+        return "level1";
     }
 
 

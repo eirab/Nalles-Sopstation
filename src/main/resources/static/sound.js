@@ -9,10 +9,10 @@ audio.play();
 muteButton.addEventListener("click", () => {
   if (audio.muted) {
     audio.muted = false;
-    muteButton.textContent = "Mute";
+    muteButton.textContent = "LJUD AV";
   } else {
     audio.muted = true;
-    muteButton.textContent = "Unmute";
+    muteButton.textContent = "LJUD PÅ";
   }
 });
 

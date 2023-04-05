@@ -5,15 +5,12 @@ const Gtext = document.getElementById("gameplay")
 let beingDragged;
 let count = 0;
 
-
-
 trashes.forEach(trash => {
     let randomX = Math.floor(Math.random() * 83) +5;
     let randomY = Math.floor(Math.random() * 45) + 5;
     trash.style.left = randomX + "%";
     trash.style.top = randomY + "%";
-
-})
+});
 
 trashcans.forEach(can => {
     can.addEventListener('dragenter', dragEnter)
@@ -62,7 +59,7 @@ function dragDrop(e) {
             .then((score) => {
             if(count === 5) {
             console.log("hej")
-            document.location.href =  "/level2"
+            document.location.href = "/level2"
             }
 
 
@@ -71,6 +68,8 @@ function dragDrop(e) {
                 const newTrash = document.createElement("img");
                 newTrash.setAttribute("src", "applecore.png");
                 document.getElementById("trash-div").append(newTrash);
+
+
 
 
 
@@ -94,10 +93,3 @@ function dragDrop(e) {
         e.target.classList.remove('dragopacity')
     }
 }
-
-
-
-
-
-
-

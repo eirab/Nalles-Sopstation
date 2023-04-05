@@ -5,15 +5,12 @@ const Gtext = document.getElementById("gameplay")
 let beingDragged;
 let count = 0;
 
-
-
 trashes.forEach(trash => {
     let randomX = Math.floor(Math.random() * 83) +5;
     let randomY = Math.floor(Math.random() * 45) + 5;
     trash.style.left = randomX + "%";
     trash.style.top = randomY + "%";
-
-})
+});
 
 trashcans.forEach(can => {
     can.addEventListener('dragenter', dragEnter)
@@ -51,8 +48,13 @@ function dragDrop(e) {
         //Make the trash disappear
         beingDragged.classList.add('hide')
         e.target.classList.remove('dragopacity')
+
+        // Play the correct trash sound
+            const correctTrashSound = document.getElementById("trashSound");
+            correctTrashSound.play();
+
         //Notify the RESTController that a trash has been correctly sorted
-        fetch("/correctlySorted")
+        fetch("/correctlySorted/" + beingDragged.getAttribute("value"))
             .then((response) => response.json())
             .then((score) => {
             if(count === 5) {
@@ -62,6 +64,12 @@ function dragDrop(e) {
 
                 //RESTController returns the new score
                 Gtext.innerText = score.message; //Update score
+                const newTrash = document.createElement("img");
+                newTrash.setAttribute("src", "applecore.png");
+                document.getElementById("trash-div").append(newTrash);
+
+
+
 
 
 
@@ -71,7 +79,13 @@ function dragDrop(e) {
 
         //If not correctly sorted
     } else {
-        fetch("/incorrectlySorted").then((response) => response.json()).then((data) => {
+     // Play the error sound
+            const errorSound = document.getElementById("errorSound");
+            errorSound.play();
+
+        fetch("/incorrectlySorted")
+        .then((response) => response.json())
+        .then((data) => {
             console.log(data.message)
 
         });
