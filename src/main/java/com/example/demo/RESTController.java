@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -15,10 +17,11 @@ public class RESTController {
     private Game game;
 
 
-    @GetMapping(value = "/correctlySorted", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Message correctlySorted() {
-        game.updateScore();
-        game.numberOfSortedTrash();
+
+    @GetMapping(value = "/correctlySorted/{id}" , produces = MediaType.APPLICATION_JSON_VALUE)
+    public Message correctlySorted(@PathVariable String id) {
+        game.updateGame(Integer.parseInt(id));
+
 
 
         Message score = new Message(String.valueOf(game.getScore()));
