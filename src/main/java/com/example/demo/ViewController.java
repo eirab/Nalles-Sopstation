@@ -82,5 +82,11 @@ public class ViewController {
         return "level2";
     }
 
+    @GetMapping("/level1")
+    public String level1() {
+
+        return "level1";
+    }
+
 }
 
