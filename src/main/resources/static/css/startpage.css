@@ -146,6 +146,7 @@ body {
    align-items: center;
    padding: 30px;
    color: white;
+   transition: 0.5s ease-in-out;
 }
 
 
@@ -250,7 +251,7 @@ body {
 
     #popup {
        width: 360px;
-       height: 400px;
+       height: 480px;
        position: absolute;
        top: -100%;
        left: 50%;
@@ -261,24 +262,33 @@ body {
        flex-direction: column;
        justify-content: flex-start;
        align-items: center;
-       padding: 10px;
+       padding: 20px;
        color: white;
     }
 
     .dropdown {
-       top: 20%!important;
+       top: 10%!important;
     }
 
     .popup-heading {
        font-family: "MotleyForces";
-       font-size: 22px;
+       font-size: 24px;
        text-transform: uppercase;
        letter-spacing: 1.5px;
     }
 
     .instructions {
+        margin-top: 15px;
         width: 300px;
         font-size: 20px;
+    }
+
+    #ok-btn {
+        width: 120px;
+        font-size: 21px;
+        padding: 6px 6px;
+        transition: 0.5s;
+        margin-top: 26px;
     }
 }
 
