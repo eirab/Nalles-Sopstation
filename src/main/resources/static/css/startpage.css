@@ -1,3 +1,9 @@
+@font-face {
+   font-family: 'MotleyForces';
+   src: url('/MotleyForcesRegular-w1rZ3.ttf')
+}
+
+
 body {
     background-color: #2d90a6;
     width: 100%;
@@ -108,4 +114,58 @@ body {
     right: 18%;
     top: 62%;
     transform: scaleX(-1);
+}
+
+#popup {
+    width: 360px;
+    height: 400px;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    margin-left: -170px;
+    background: #2d90a6;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    color: white;
+}
+
+.dropdown {
+    top: 20%!important;
+}
+
+.popup-heading {
+    font-family: "MotleyForces";
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+#ok-btn {
+     border-radius: 90px;
+     border: 4px solid white;
+     width: 130px;
+     height: auto;
+     color: white;
+     font-size: 22px;
+     padding: 6px 6px;
+     background-color: transparent;
+     outline: none;
+     opacity: 0.7;
+     transition: 0.5s;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+}
+
+#ok-btn:hover {
+    color: white;
+    border-color: white;
+    text-shadow: 0 0 6px white;
+    box-shadow: 0 0 16px white;
+    opacity: 1;
 }
