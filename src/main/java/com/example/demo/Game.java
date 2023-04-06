@@ -44,6 +44,7 @@ public class Game {
         addMoreTrash();
     }
     public List<Trash> getCurrentTrash() {
+
         return currentTrash;
     }
 
@@ -81,11 +82,16 @@ public class Game {
 
 
     public int getScore() {
+
         return score;
     }
 
     public void numberOfSortedTrash() {
         //if ( countSortedTrashed > 14);
+    }
+
+    public void resetScore() {
+        this.score = 0;
     }
 
 }

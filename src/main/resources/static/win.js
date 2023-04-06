@@ -1,6 +1,8 @@
-const button = document.querySelector('#button');
-
+const button = document.querySelector('.play-again-btn');
 const canvas = document.querySelector('#canvas');
+
+button.addEventListener('click', whenClicking)
+
 
 const jsConfetti = new JSConfetti();
 
@@ -17,4 +19,9 @@ document.addEventListener("DOMContentLoaded", function() {
 function startConfetti() {
     jsConfetti.addConfetti();
 
+}
+
+
+function whenClicking() {
+      document.location.href = "/level1"
 }
