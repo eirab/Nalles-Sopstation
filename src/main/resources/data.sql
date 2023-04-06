@@ -14,7 +14,10 @@ INSERT INTO TRASH (trash_category_id, image) VALUES
 (2, 'trashes/8-toothpaste.png'),
 (2, 'trashes/15-soapbottle.png'),
 (2, 'trashes/18-plasticfork.png'),
-(5, 'trashes/2-box.png');
+(5, 'trashes/2-box.png'),
+(5, 'trashes/14-carton.png'),
+(5, 'trashes/16-paperbag.png');
+
 
 
 
