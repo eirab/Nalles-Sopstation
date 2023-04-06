@@ -30,6 +30,7 @@ body {
     left: 0;
 
 }
+
 #audio-controls {
   position: absolute;
   top: 20px;
@@ -37,6 +38,7 @@ body {
   float: right;
   z-index: 1;
 }
+
 #mute-button {
     font-family: "MotleyForces";
     font-size: 24px;
@@ -79,7 +81,6 @@ body {
         font-size: 14px;
         letter-spacing: 1px;
 }
-
     .trashcan {
         width: 250px;
     }

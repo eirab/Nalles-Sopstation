@@ -14,27 +14,29 @@
 <div th:class="score-text" id="gameplay" text="score">5</div>
 
 <div id="audio-controls">
-    <button id="mute-button">LJUD AV</button>
+    <button id="mute-button">LJUD AV:</button>
     <label for="volume-slider"></label><input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
 </div>
 
 <div th:class="black-filter"></div>
 <div th:each="trash: ${trashArray}">
-    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" th:value="${trash.getTrash_id()}">
+
+    <img th:src="${trash.getImage()}" draggable="true"
+         th:id="${trash.getTrash_category_id()}"  th:class="trash" th:value="${trash.getTrash_id()}"/>
 
 </div>
 
 <div th:class="trashcan-container">
     <div th:each="trashCan: ${trashCanArray}">
-        <img th:src="${trashCan.getImage()}" th:class="trashcan" th:id="${trashCan.getTrash_category_id()}">
+        <img th:src="${trashCan.getImage()}" th:class="trashcan" th:id="${trashCan.getTrash_category_id()}"></img>
     </div>
 </div>
 
     <script src="/level2.js"></script>
     <script src="/sound.js"></script>
+
 <audio id="errorSound" src="wrongS.mp3"></audio>
 <audio id="trashSound" src="trash.mp3"></audio>
-
 
 </body>
 </html>
