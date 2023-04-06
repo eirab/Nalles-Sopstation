@@ -64,10 +64,10 @@ function dragDrop(e) {
 
                 //RESTController returns the new score
                 Gtext.innerText = score.message; //Update score
-                const newTrash = document.createElement("img");
+              /*  const newTrash = document.createElement("img");
                 newTrash.setAttribute("src", "applecore.png");
                 document.getElementById("trash-div").append(newTrash);
-
+*/
 
 
 
