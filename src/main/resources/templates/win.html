@@ -2,16 +2,16 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet"  href="/win.css" th:href="'/win.css'"/>
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="/css/win.css"/>
     <title>Nalles Sopstation</title>
-    <audio id="crowd" src="/crowdcheering.mp3"></audio>
+    <audio id="crowd" src="/audio/crowdcheering.mp3"></audio>
 </head>
 <body>
         <canvas id="canvas"></canvas>
         <div th:class="black-filter"></div>
         <p th:class="congrat-text">Grattis, du vann!</p>
-        <img th:src="'/gold.png'" th:class="price-image"/>
+        <img th:src="'/images/gold.png'" th:class="price-image"/>
         <button th:class="play-again-btn"><a th:href="'/level1'">Spela igen</a></button>
 
     <script

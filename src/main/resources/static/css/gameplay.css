@@ -10,7 +10,7 @@
 }
 
 body {
-background-image: url(kitchen2.png);
+background-image: url(../images/kitchen2.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -66,29 +66,31 @@ background-image: url(kitchen2.png);
   cursor: pointer;
 }
 
+.trash {
+    width: 120px;
+    height: auto;
+    cursor: grab;
+    position: absolute;
+}
 .trashcan-container {
-        width: 1100px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        position: absolute;
-        bottom: 3% !important;
-        left: 50%;
-        margin-left: -550px;
-        font-size: 14px;
-        letter-spacing: 1px;
+
+    padding-left: 10%;
+    padding-right: 10%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
 }
 
-    .trashcan {
-        width: 180px;
+.trashcan {
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+
     }
 
-    .trash {
-        width: 120px;
-        height: auto;
-        cursor: grab;
-        position: absolute;
-    }
+
 
     .dragopacity {
         opacity: 0.5;

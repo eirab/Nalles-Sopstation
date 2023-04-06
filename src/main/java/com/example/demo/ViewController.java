@@ -24,15 +24,21 @@ public class ViewController {
 
 
     @GetMapping("/")
-    public String start(Model model) {
+    public String start(Model model ) {
+
+        model.addAttribute("score", game.getScore());
+
+
+
+
+
+
+
         return "start";
     }
 
     @GetMapping("/level1")
     public String getGameplaySite(Model model) {
-
-
-
 
         model.addAttribute("trashArray", game.getCurrentTrash());
         model.addAttribute("trashCanArray",trashCanRepository.getTrashCans());
@@ -65,6 +71,7 @@ public class ViewController {
         }
 
 
+        model.addAttribute("score", game.getScore());
         model.addAttribute("trashArray", fiveTrash);
         model.addAttribute("trashCanArray", trashCanRepository.getTrashCans());
 

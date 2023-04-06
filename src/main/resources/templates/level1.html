@@ -2,38 +2,41 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet"  href="/css/level1.css" th:href="'/css/level1.css'"/>
+    <link href="/css/gameplay.css" rel="stylesheet"/>
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
 
     <title>Nalles Sopstation</title>
-    <audio id="startSong" src="lotNa.mp3" autoplay></audio>
+    <audio autoplay id="startSong" src="/audio/lotNa.mp3"></audio>
 </head>
 <body>
 
-        <p th:class="point-text">POÄNG:</p>
-        <div th:class="score-text" id="gameplay" text="score">0</div>
+<p th:class="point-text">POÄNG:</p>
+<div th:class="score-text" id="gameplay" text="score">0</div>
 
-        <div id="audio-controls">
-            <button id="mute-button">LJUD AV</button>
-            <label for="volume-slider"></label><input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
-        </div>
+<div id="audio-controls">
+    <button id="mute-button">LJUD AV</button>
+    <label for="volume-slider"></label><input id="volume-slider" max="1" min="0" step="0.1" type="range" value="1">
+</div>
 
-        <div th:class="black-filter"></div>
-        <div th:id="trash-div" th:each="trash: ${trashArray}">
-                    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" th:value="${trash.getTrash_id()}" />
+<div th:class="black-filter"></div>
+<div class="container" th:each="trash: ${trashArray}" th:id="trash-div">
+    <img draggable="true" th:class="trash" th:id="${trash.getTrash_category_id()}" th:src="${trash.getImage()}"
+         th:value="${trash.getTrash_id()}"/>
+</div>
 
-                </div>
 
-            <div th:class="trashcan-container">
-                    <div th:each="trashCan: ${trashCanArray}">
-                        <img th:src="${trashCan.getImage()}" th:class="trashcan" th:id="${trashCan.getTrash_category_id()}"></img>
-                    </div>
-            </div>
+<div class="trashcan-container d-flex justify-content-center">
+    <div th:each="trashCan: ${trashCanArray}">
+        <img class="trashcan" th:id="${trashCan.getTrash_category_id()}" draggable="false" th:src="${trashCan.getImage()}"></img>
+    </div>
+</div>
 
-        <script src="/gameplay.js"></script>
-        <script src="/sound.js"></script>
-<audio id="errorSound" src="wrongS.mp3"></audio>
-<audio id="trashSound" src="trash.mp3"></audio>
+<script type="text/javascript" src="/gameplay.js"></script>
+<script type="text/javascript" src="/sound.js"></script>
+<audio id="errorSound" src="/audio/wrongS.mp3"></audio>
+<audio id="trashSound" src="/audio/trash.mp3"></audio>
 
 </body>
 </html>
