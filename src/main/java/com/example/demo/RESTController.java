@@ -18,9 +18,9 @@ public class RESTController {
 
 
 
-    @GetMapping(value = "/correctlySorted/{id}" , produces = MediaType.APPLICATION_JSON_VALUE)
-    public Message correctlySorted(@PathVariable String id) {
-        game.updateGame(Integer.parseInt(id));
+    @GetMapping(value = "/correctlySorted" , produces = MediaType.APPLICATION_JSON_VALUE)
+    public Message correctlySorted() {
+        game.updateGame();
 
 
 

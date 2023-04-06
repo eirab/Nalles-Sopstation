@@ -54,7 +54,7 @@ function dragDrop(e) {
             correctTrashSound.play();
 
         //Notify the RESTController that a trash has been correctly sorted
-        fetch("/correctlySorted/" + beingDragged.getAttribute("value"))
+        fetch("/correctlySorted")
             .then((response) => response.json())
             .then((score) => {
             if(count === 5) {
@@ -64,10 +64,7 @@ function dragDrop(e) {
 
                 //RESTController returns the new score
                 Gtext.innerText = score.message; //Update score
-              /*  const newTrash = document.createElement("img");
-                   newTrash.setAttribute("src", "applecore.png");
-                   document.getElementById("trash-div").append(newTrash);
-   */
+
 
 
 

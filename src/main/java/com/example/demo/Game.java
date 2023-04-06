@@ -31,12 +31,12 @@ public class Game {
     }
 
 
-    public void updateGame(int id) {
+    public void updateGame() {
         updateScore();
         if(score == 8){
             gameEnd();
         }
-        updateCurrentTrash(id);
+
     }
 
     private void updateCurrentTrash(int id) {

@@ -2,11 +2,14 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
     <link rel="stylesheet"  href="/css/level3.css" th:href="'/css/level3.css'"/>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
+
 
     <title>Nalles Sopstation</title>
-    <audio id="startSong" src="lotNa.mp3" autoplay></audio>
+    <audio id="startSong" src="audio/lotNa.mp3" autoplay></audio>
 </head>
 <body>
 
@@ -14,29 +17,26 @@
 <div th:class="score-text" id="gameplay" text="score">10</div>
 
 <div id="audio-controls">
-    <button id="mute-button">LJUD AV:</button>
+    <button id="mute-button">LJUD AV</button>
     <label for="volume-slider"></label><input type="range" id="volume-slider" min="0" max="1" step="0.1" value="1">
 </div>
 
 <div th:class="black-filter"></div>
-<div th:each="trash: ${trashArray}">
-
-    <img th:src="${trash.getImage()}" draggable="true"
-         th:id="${trash.getTrash_category_id()}"  th:class="trash" th:value="${trash.getTrash_id()}"/>
-
+<div class="container" th:each="trash: ${trashArray}" th:id="trash-div">
+    <img draggable="true" th:class="trash" th:id="${trash.getTrash_category_id()}" th:src="${trash.getImage()}"
+         th:value="${trash.getTrash_id()}"/>
 </div>
 
-<div th:class="trashcan-container">
+<div class="trashcan-container d-flex justify-content-center">
     <div th:each="trashCan: ${trashCanArray}">
-        <img th:src="${trashCan.getImage()}" th:class="trashcan" th:id="${trashCan.getTrash_category_id()}"></img>
+        <img class="trashcan" th:id="${trashCan.getTrash_category_id()}" th:src="${trashCan.getImage()}"></img>
     </div>
 </div>
 
 <script src="/level3.js"></script>
 <script src="/sound.js"></script>
-
-<audio id="errorSound" src="wrongS.mp3"></audio>
-<audio id="trashSound" src="trash.mp3"></audio>
+<audio id="errorSound" src="/audio/wrongS.mp3"></audio>
+<audio id="trashSound" src="/audio/trash.mp3"></audio>
 
 
 </body>
