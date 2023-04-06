@@ -2,6 +2,7 @@ const trashcans = document.querySelectorAll('.trashcan')
 const trashes = document.querySelectorAll('.trash')
 const Gtext = document.getElementById("gameplay")
 
+
 let beingDragged;
 let count = 0;
 
@@ -49,9 +50,30 @@ function dragDrop(e) {
         beingDragged.classList.add('hide')
         e.target.classList.remove('dragopacity')
 
-        // Play the correct trash sound
-            const correctTrashSound = document.getElementById("trashSound");
-            correctTrashSound.play();
+
+
+        if(beingDragged.id === "2") {
+            const plasticSound = document.getElementById("plasticSound");
+            plasticSound.play();
+
+        }
+
+        if(beingDragged.id === "3") {
+            const pantAudio = document.getElementById("pantAudio");
+            pantAudio.play();
+
+        }
+
+        if(beingDragged.id === "4") {
+            const metalSound = document.getElementById("metalSound");
+            metalSound.play();
+
+        }
+
+
+
+
+
 
         //Notify the RESTController that a trash has been correctly sorted
         fetch("/correctlySorted")
