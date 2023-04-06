@@ -20,13 +20,13 @@
 
 <div th:class="black-filter"></div>
 <div th:each="trash: ${trashArray}">
-    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" th:value="${trash.getTrash_id()}" />
+    <img th:src="${trash.getImage()}" draggable="true" th:id="${trash.getTrash_category_id()}"  th:class="trash" th:value="${trash.getTrash_id()}">
 
 </div>
 
 <div th:class="trashcan-container">
     <div th:each="trashCan: ${trashCanArray}">
-        <img th:src="${trashCan.getImage()}" th:class="trashcan" th:id="${trashCan.getTrash_category_id()}"></img>
+        <img th:src="${trashCan.getImage()}" th:class="trashcan" th:id="${trashCan.getTrash_category_id()}">
     </div>
 </div>
 
