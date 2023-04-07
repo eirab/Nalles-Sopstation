@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MotleyForces';
-    src: url('/MotleyForcesRegular-w1rZ3.ttf')
+    src: url('../MotleyForcesRegular-w1rZ3.ttf')
 }
 
 * {
@@ -9,9 +9,9 @@
     box-sizing: border-box;
 }
 
-
 body {
-background-image: url(../images/kitchen2.png);
+
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -20,16 +20,6 @@ background-image: url(../images/kitchen2.png);
     height: 100vh;
     overflow-y: hidden;
     overflow-x: hidden;
-}
-
-.black-filter {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
-
 }
 
 #audio-controls {
@@ -67,6 +57,8 @@ background-image: url(../images/kitchen2.png);
   cursor: pointer;
 }
 
+
+
 .trash {
     width: 120px;
     height: auto;
@@ -75,19 +67,22 @@ background-image: url(../images/kitchen2.png);
 }
 .trashcan-container {
 
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-bottom: 2%;
+    padding-left: 15%;
+    padding-right: 15%;
     position: fixed;
     bottom: 0;
     width: 100%;
 
 }
 
+
 .trashcan {
 
     width: 100%;
     height: 100%;
-    object-fit: cover
+    object-fit: cover;
+
 
     }
 

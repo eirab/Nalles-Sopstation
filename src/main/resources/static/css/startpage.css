@@ -1,14 +1,8 @@
 
 @font-face {
  font-family: 'MotleyForces';
- src: url('/MotleyForcesRegular-w1rZ3.ttf')
+ src: url('../MotleyForcesRegular-w1rZ3.ttf')
 }
-
-
-
-
-
-
 
 
 body {
@@ -18,8 +12,6 @@ body {
   overflow-x: hidden;
   overflow-y: hidden;
 }
-
-
 
 
 #play-button {

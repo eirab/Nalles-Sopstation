@@ -23,5 +23,7 @@ function startConfetti() {
 
 
 function whenClicking() {
-      document.location.href = "/level1"
+
+
+      document.location.href = "/game"
 }

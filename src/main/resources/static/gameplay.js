@@ -1,13 +1,61 @@
 const trashcans = document.querySelectorAll('.trashcan')
 const trashes = document.querySelectorAll('.trash')
 const Gtext = document.getElementById("gameplay")
+const trashArray = [];
 
 
+let level;
+let backgroundURL;
 let beingDragged;
 let count = 0;
 
+
+class Trash {
+
+    id;
+    trash_category_id;
+    x;
+    y;
+    url;
+
+    constructor(id, trash_category_id, url) {
+        this.id = id;
+        this.trash_category_id = trash_category_id;
+        this.url = url;
+        this.x = randomX();
+        this.y = randomY();
+    }
+
+}
+
+
+function addToTrashArray(Trash) {
+    trashArray.push(Trash);
+}
+
+function setBackground(url){
+    backgroundURL = url;
+    document.body.style.backgroundImage = backgroundURL;
+}
+
+function randomX() {
+    return Math.floor(Math.random() * 83) + 5;
+
+
+}
+
+function randomY() {
+    return Math.floor(Math.random() * 45) + 5;
+
+}
+
+function setLevel(lvl){
+    level = lvl;
+}
+
+
 trashes.forEach(trash => {
-    let randomX = Math.floor(Math.random() * 83) +5;
+    let randomX = Math.floor(Math.random() * 83) + 5;
     let randomY = Math.floor(Math.random() * 45) + 5;
     trash.style.left = randomX + "%";
     trash.style.top = randomY + "%";
@@ -15,9 +63,10 @@ trashes.forEach(trash => {
 
 trashcans.forEach(can => {
     can.addEventListener('dragenter', dragEnter)
-       can.addEventListener('dragover', dragOver)
-       can.addEventListener('drop', dragDrop)
-       can.addEventListener('dragleave', dragLeave)
+    can.addEventListener('dragover', dragOver)
+    can.addEventListener('drop', dragDrop)
+    can.addEventListener('dragleave', dragLeave)
+
 })
 
 trashes.forEach(trash => {
@@ -34,74 +83,87 @@ function dragLeave(e) {
 
 function dragOver(e) {
     e.preventDefault();
-    console.log(e.target)
+
 }
 
 function dragStart(e) {
-      beingDragged = e.target;
+    beingDragged = e.target;
 }
 
 
 function dragDrop(e) {
+    e.preventDefault();
     //If trash is correctly sorted
-    if(e.target.id === beingDragged.id) {
-    count++;
+    if (e.target.id === beingDragged.id) {
+        count++;
         //Make the trash disappear
-        beingDragged.classList.add('hide')
-        e.target.classList.remove('dragopacity')
 
 
 
-        if(beingDragged.id === "2") {
+
+        if (beingDragged.id === "1") {
+            const kompostAudio = document.getElementById("kompostAudio");
+            kompostAudio.play();
+
+        }
+
+        if (beingDragged.id === "2") {
             const plasticSound = document.getElementById("plasticSound");
             plasticSound.play();
 
         }
 
-        if(beingDragged.id === "3") {
-            const pantAudio = document.getElementById("pantAudio");
+        if (beingDragged.id === "3") {
+            const pantAudio = document.getElementById("trashSound");
             pantAudio.play();
 
         }
 
-        if(beingDragged.id === "4") {
+        if (beingDragged.id === "4") {
             const metalSound = document.getElementById("metalSound");
             metalSound.play();
 
         }
 
+        if (beingDragged.id === "5") {
+            const cardboardAudio = document.getElementById("cardboardAudio");
+            cardboardAudio.play();
 
+        }
 
-
-
-
+        beingDragged.classList.add('hide')
+        e.target.classList.remove('dragopacity')
+        console.log(count)
+        console.log("Current level:" + level)
         //Notify the RESTController that a trash has been correctly sorted
-        fetch("/correctlySorted")
+        fetch("/correctlySorted/" + count + "/" + level)
             .then((response) => response.json())
             .then((score) => {
-            if(count === 5) {
-            console.log("hej")
-            document.location.href = "/level2"
-            }
+                if (count === 5) {
+                    document.location.href = "/game"
+                }
+                if(count === 5 && level === 3){
+                    document.location.href = "/vinst"
+                }
                 //RESTController returns the new score
                 Gtext.innerText = score.message; //Update score
 
             });
 
 
-
         //If not correctly sorted
     } else {
-     // Play the error sound
-            const errorSound = document.getElementById("errorSound");
-            errorSound.play();
+        // Play the error sound
+        const errorSound = document.getElementById("errorSound");
+        errorSound.play();
 
         fetch("/incorrectlySorted")
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data.message)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log(data.message)
 
-        });
+            });
+
         e.target.classList.remove('dragopacity')
     }
 }

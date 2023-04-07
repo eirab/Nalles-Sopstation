@@ -18,15 +18,17 @@ public class RESTController {
 
 
 
-    @GetMapping(value = "/correctlySorted" , produces = MediaType.APPLICATION_JSON_VALUE)
-    public Message correctlySorted() {
-        game.updateGame();
+    @GetMapping(value = "/correctlySorted/{count}/{level}" , produces = MediaType.APPLICATION_JSON_VALUE)
+    public Message correctlySorted(@PathVariable int count, @PathVariable int level) {
+
+        game.updateGame(count, level);
 
 
 
         Message score = new Message(String.valueOf(game.getScore()));
         return score;
     }
+
 
     @GetMapping(value = "/incorrectlySorted", produces = MediaType.APPLICATION_JSON_VALUE)
     public Message incorrectlySorted() {
@@ -41,6 +43,7 @@ public class RESTController {
     public class Message {
 
         private String message;
+
 
         public Message(String message) {
 
