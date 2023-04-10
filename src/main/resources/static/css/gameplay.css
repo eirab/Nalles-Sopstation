@@ -9,6 +9,8 @@
     box-sizing: border-box;
 }
 
+
+
 body {
 
 
@@ -22,6 +24,13 @@ body {
     overflow-x: hidden;
 }
 
+.point-box{
+
+
+
+
+}
+
 #audio-controls {
   position: absolute;
   top: 20px;
@@ -30,12 +39,14 @@ body {
   z-index: 1;
 }
 #mute-button {
-  font-size: 16px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #ddd;
-  margin-right: 10px;
+    font-family: "MotleyForces";
+    font-size: 20px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: cornflowerblue;
+    margin-right: 10px;
 }
 
 #volume-slider {
@@ -96,11 +107,20 @@ body {
         visibility: hidden;
     }
 
+    .point-table{
+        color: darkgray;
+        text-shadow: 2px 4px 4px rgba(99,99,99,0.6);
+
+
+
+    }
+
     .point-text {
+
         position: absolute;
         top: 2%;
-        left: 2.5%;
-        font-size: 24px;
+        left: 2%;
+        font-size: 32px;
         letter-spacing: 1.3px;
         font-family: "MotleyForces";
         z-index: 12;
@@ -114,7 +134,7 @@ body {
         color: white;
         z-index: 12;
         font-family: "MotleyForces";
-        font-size: 24px;
+        font-size: 32px;
     }
 
 

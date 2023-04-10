@@ -1,21 +1,18 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.context.annotation.Scope;
+    import org.springframework.stereotype.Controller;
+    import org.springframework.ui.Model;
+    import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @Scope("session")
 public class ViewController {
-    @Autowired
-    private TrashRepository trashRepository;
+
 
     @Autowired
     private TrashCanRepository trashCanRepository;
-
-
     @Autowired
     private Game game;
 
@@ -24,6 +21,7 @@ public class ViewController {
     public String start(Model model) {
 
         model.addAttribute("score", game.getScore());
+
 
 
         return "start";
@@ -35,7 +33,6 @@ public class ViewController {
 
 
         model.addAttribute("level", game.getLevel());
-        model.addAttribute("ground-url", game.getGround());
         model.addAttribute("url", game.getBackground());
         model.addAttribute("score", game.getScore());
         model.addAttribute("trashArray", game.getCurrentTrash());

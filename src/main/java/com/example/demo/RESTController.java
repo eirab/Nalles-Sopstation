@@ -18,10 +18,11 @@ public class RESTController {
 
 
 
-    @GetMapping(value = "/correctlySorted/{count}/{level}" , produces = MediaType.APPLICATION_JSON_VALUE)
-    public Message correctlySorted(@PathVariable int count, @PathVariable int level) {
+    @GetMapping(value = "/correctlySorted/{count}/{level}/{id}" , produces = MediaType.APPLICATION_JSON_VALUE)
+    public Message correctlySorted(@PathVariable int count, @PathVariable int level, @PathVariable int id) {
 
-        game.updateGame(count, level);
+
+        game.updateGame(count, level, id);
 
 
 
@@ -39,15 +40,31 @@ public class RESTController {
 
     }
 
+    @GetMapping(value= "/restartGame", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Message restartGame(){
+        game.restart();
+
+        Message data = new Message(String.valueOf(game.getScore()), String.valueOf(game.getLevel()));
+
+
+        return data;
+    }
+
 
     public class Message {
 
         private String message;
+        private String message2;
 
 
         public Message(String message) {
 
             this.message = message;
+        }
+
+        public Message(String message1, String message2){
+            this.message = message1;
+            this.message2 = message2;
         }
 
 
@@ -59,6 +76,14 @@ public class RESTController {
         public void setMessage(String message) {
 
             this.message = message;
+        }
+
+        public String getMessage2() {
+            return message2;
+        }
+
+        public void setMessage2(String message2) {
+            this.message2 = message2;
         }
     }
 

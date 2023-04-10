@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -14,29 +16,45 @@ public class Game {
     private static final String LEVEL1_BACKGROUND = "url(../images/level1-background.png)";
     private static final String LEVEL2_BACKGROUND ="url(../images/level2-background.png)";
     private static final String LEVEL3_BACKGROUND ="url(../images/level3-background.png)";
-    private static final String LEVEL1_GROUND = "../images/level-1-front.png";
+    private final int NUMBER_OF_TRASH = 5;
+
+
 
     private int score;
 
     private int level;
-
-
     private List<Trash> currentTrash;
+    private List<Trash> allTrash;
+
+
     @Autowired
     private TrashRepository repository;
-    private int totalTrashCount;
 
 
 
     public Game(TrashRepository repository) {
+
         this.score = 0;
-        this.repository= repository;
         this.level= 1;
-        this.totalTrashCount = 0;
-        this.currentTrash = repository.getTrash(5);
+        this.allTrash = repository.getAllTrash();
+        this.currentTrash = setCurrentTrash();
 
     }
 
+
+
+    private List<Trash> setCurrentTrash(){
+
+        List<Trash> trash = new ArrayList<>();
+        Collections.shuffle(allTrash);
+        for (int i = 0; i < NUMBER_OF_TRASH ; i++) {
+            trash.add(allTrash.get(i));
+
+        }
+
+        return trash;
+
+    }
     public String getBackground() {
         switch (this.level) {
             case 1:
@@ -50,23 +68,50 @@ public class Game {
         return null;
     }
 
-    public void updateGame(int count, int level) {
+    public void updateGame(int count, int level, int id) {
+        removeSorted(id);
         if(count == 5){
             switch(level){
                 case 1, 2, 3:
                     updateScore();
                     nextLevel();
-                    currentTrash = repository.getTrash(5);
+                    currentTrash = setCurrentTrash();
                     break;
                 case 4: this.score = 0;
                 this.level = 1;
-                currentTrash = repository.getTrash(5);
+                currentTrash = setCurrentTrash();
                 break;
             }
+        } else {
+
+
+            updateScore();
+        }
+    }
+
+    private void removeSorted(int id){
+
+        for (int i = 0; i < allTrash.size(); i++) {
+           if(allTrash.get(i).getTrash_id() == id){
+               allTrash.remove(getTrashByID(id));
+
+           }
+
         }
 
-        updateScore();
 
+    }
+
+    private Trash getTrashByID(int id){
+
+
+        for (Trash t : allTrash
+             ) { if(t.getTrash_id() == id){
+                return t;
+        }
+
+        }
+        return null;
     }
 
 
@@ -79,10 +124,7 @@ public class Game {
             this.level++;
         }
     }
-    private void updateCurrentTrash(int id) {
-        currentTrash.remove(getTrashById(id));
-        addMoreTrash();
-    }
+
     public List<Trash> getCurrentTrash() {
 
         return currentTrash;
@@ -102,22 +144,7 @@ public class Game {
         this.score += 1;
     }
 
-    private int getNCurrentTrash(){
-        return currentTrash.size();
-    }
 
-
-    private void addMoreTrash() {
-        this.currentTrash.add(repository.getOneTrash());
-    }
-
-    private void gameEnd() {
-
-    }
-
-    private void updateTrashCount() {
-        this.totalTrashCount++;
-    }
 
 
 
@@ -126,19 +153,17 @@ public class Game {
         return score;
     }
 
-    public void numberOfSortedTrash() {
-        //if ( countSortedTrashed > 14);
-    }
 
-    public void resetScore() {
-        this.score = 0;
-    }
-
-    public String getGround() {
-        return LEVEL1_GROUND;
-    }
 
     public int getLevel() {
         return level;
+    }
+
+    public void restart() {
+        this.level = 1;
+        this.score = 0;
+        this.currentTrash = repository.getRandomTrash(5);
+
+
     }
 }
