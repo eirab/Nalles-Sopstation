@@ -9,13 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 @Scope("session")
 public class ViewController {
-    @Autowired
-    private TrashRepository trashRepository;
+
 
     @Autowired
     private TrashCanRepository trashCanRepository;
-
-
     @Autowired
     private Game game;
 
@@ -24,6 +21,7 @@ public class ViewController {
     public String start(Model model) {
 
         model.addAttribute("score", game.getScore());
+
 
 
         return "start";

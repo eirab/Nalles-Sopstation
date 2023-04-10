@@ -22,6 +22,13 @@ body {
     overflow-x: hidden;
 }
 
+.point-box{
+
+
+
+
+}
+
 #audio-controls {
   position: absolute;
   top: 20px;
@@ -100,6 +107,7 @@ body {
         position: absolute;
         top: 2%;
         left: 2.5%;
+        margin-right: 2%;
         font-size: 24px;
         letter-spacing: 1.3px;
         font-family: "MotleyForces";

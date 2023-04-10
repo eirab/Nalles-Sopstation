@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -16,12 +17,16 @@ public class Game {
     private static final String LEVEL3_BACKGROUND ="url(../images/level3-background.png)";
     private static final String LEVEL1_GROUND = "../images/level-1-front.png";
 
+
     private int score;
 
     private int level;
 
-
+private int[] previousTrash;
     private List<Trash> currentTrash;
+    private List<Trash> allTrash;
+
+
     @Autowired
     private TrashRepository repository;
     private int totalTrashCount;
@@ -30,10 +35,14 @@ public class Game {
 
     public Game(TrashRepository repository) {
         this.score = 0;
-        this.repository= repository;
         this.level= 1;
         this.totalTrashCount = 0;
-        this.currentTrash = repository.getTrash(5);
+        this.allTrash = repository.getAllTrash();
+        this.currentTrash = repository.getRandomTrash(5);
+
+    }
+
+    private void addSorted(){
 
     }
 
@@ -56,17 +65,17 @@ public class Game {
                 case 1, 2, 3:
                     updateScore();
                     nextLevel();
-                    currentTrash = repository.getTrash(5);
+                    currentTrash = repository.getRandomTrash(5);
                     break;
                 case 4: this.score = 0;
                 this.level = 1;
-                currentTrash = repository.getTrash(5);
+                currentTrash = repository.getRandomTrash(5);
                 break;
             }
+        } else {
+
+            updateScore();
         }
-
-        updateScore();
-
     }
 
 
@@ -111,28 +120,12 @@ public class Game {
         this.currentTrash.add(repository.getOneTrash());
     }
 
-    private void gameEnd() {
-
-    }
-
-    private void updateTrashCount() {
-        this.totalTrashCount++;
-    }
-
-
 
     public int getScore() {
 
         return score;
     }
 
-    public void numberOfSortedTrash() {
-        //if ( countSortedTrashed > 14);
-    }
-
-    public void resetScore() {
-        this.score = 0;
-    }
 
     public String getGround() {
         return LEVEL1_GROUND;
@@ -140,5 +133,13 @@ public class Game {
 
     public int getLevel() {
         return level;
+    }
+
+    public void restart() {
+        this.level = 1;
+        this.score = 0;
+        this.currentTrash = repository.getRandomTrash(5);
+
+
     }
 }

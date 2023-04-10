@@ -1,7 +1,9 @@
+
 const trashcans = document.querySelectorAll('.trashcan')
 const trashes = document.querySelectorAll('.trash')
 const Gtext = document.getElementById("gameplay")
 const trashArray = [];
+
 
 
 let level;
@@ -99,8 +101,6 @@ function dragDrop(e) {
         //Make the trash disappear
 
 
-
-
         if (beingDragged.id === "1") {
             const kompostAudio = document.getElementById("kompostAudio");
             kompostAudio.play();
@@ -136,13 +136,13 @@ function dragDrop(e) {
         console.log(count)
         console.log("Current level:" + level)
         //Notify the RESTController that a trash has been correctly sorted
-        fetch("/correctlySorted/" + count + "/" + level)
+        fetch("/correctlySorted/" + count + "/" + level + "/" + beingDragged.getAttribute("value"))
             .then((response) => response.json())
             .then((score) => {
                 if (count === 5) {
                     document.location.href = "/game"
                 }
-                if(count === 5 && level === 3){
+                if (count === 5 && level === 3) {
                     document.location.href = "/vinst"
                 }
                 //RESTController returns the new score
@@ -156,14 +156,7 @@ function dragDrop(e) {
         // Play the error sound
         const errorSound = document.getElementById("errorSound");
         errorSound.play();
-
-        fetch("/incorrectlySorted")
-            .then((response) => response.json())
-            .then((data) => {
-                console.log(data.message)
-
-            });
-
         e.target.classList.remove('dragopacity')
     }
+
 }
