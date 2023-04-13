@@ -45,7 +45,7 @@ public class ViewController {
 
     @GetMapping("/vinst")
     public String getWinSite() {
-        game.resetScore();
+        game.restart();
         return "win";
     }
 
