@@ -1,50 +1,45 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-
-import java.util.ArrayList;
-import java.util.Collections;
+    import org.springframework.beans.factory.annotation.Autowired;
+    import org.springframework.context.annotation.Scope;
+    import org.springframework.stereotype.Controller;
+    import org.springframework.ui.Model;
+    import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @Scope("session")
 public class ViewController {
-    @Autowired
-    private TrashRepository trashRepository;
+
 
     @Autowired
     private TrashCanRepository trashCanRepository;
-
-
     @Autowired
     private Game game;
 
 
     @GetMapping("/")
-    public String start(Model model ) {
+    public String start(Model model) {
 
         model.addAttribute("score", game.getScore());
-
-
-
-
 
 
 
         return "start";
     }
 
-    @GetMapping("/level1")
+    @GetMapping("/game")
     public String getGameplaySite(Model model) {
 
+
+
+        model.addAttribute("level", game.getLevel());
+        model.addAttribute("url", game.getBackground());
+        model.addAttribute("score", game.getScore());
         model.addAttribute("trashArray", game.getCurrentTrash());
-        model.addAttribute("trashCanArray",trashCanRepository.getTrashCans());
+        model.addAttribute("trashCanArray", trashCanRepository.getTrashCans());
 
 
-        return "level1";
+        return "game";
     }
 
 
@@ -55,52 +50,7 @@ public class ViewController {
     }
 
 
-    @GetMapping("/level2")
-    public String getLevel2(Model model) {
-        /*Lista med all trash som finns i databasen: */
-        ArrayList<Trash> allTrash = (ArrayList<Trash>) trashRepository.getTrash();
-
-        /*Blandar om listan så att trashet ligger huller om buller: */
-        Collections.shuffle(allTrash);
-
-        /*Ny lista samt en for-loop som lägger in 5 stycken trash i den nya listan*/
-        ArrayList<Trash> fiveTrash = new ArrayList<>();
-
-        for (int i = 0; i < 5; i++) {
-            fiveTrash.add(allTrash.get(i));
-        }
-
-
-        model.addAttribute("score", game.getScore());
-        model.addAttribute("trashArray", fiveTrash);
-        model.addAttribute("trashCanArray", trashCanRepository.getTrashCans());
-
-        return "level2";
-    }
-
-
-    @GetMapping("/level3")
-    public String getLevel3(Model model) {
-
-        /*Lista med all trash som finns i databasen: */
-        ArrayList<Trash> allTrash = (ArrayList<Trash>) trashRepository.getTrash();
-
-        /*Blandar om listan så att trashet ligger huller om buller: */
-        Collections.shuffle(allTrash);
-
-        /*Ny lista samt en for-loop som lägger in 5 stycken trash i den nya listan*/
-
-        ArrayList<Trash> fiveTrash = new ArrayList<>();
-
-        for (int i = 0; i < 5; i++) {
-            fiveTrash.add(allTrash.get(i));
-
-        }
-        model.addAttribute("trashArray", fiveTrash);
-        model.addAttribute("trashCanArray", trashCanRepository.getTrashCans());
-
-        return "level3";
-    }}
+}
 
 
 

@@ -4,22 +4,17 @@
     <meta charset="UTF-8">
 
 
+    <link rel="stylesheet" href="/css/startpage.css" th:href="'/css/startpage.css'" />
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="/css/startpage.css" th:href="'/css/startpage.css'" />
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+
     <title>Nalles Sopstation</title>
 
 
 </head>
 <body class="container">
 
-
-<img th:src="'/trashes/2-box.png'"  th:class="box"/>
-<img th:src="'/trashes/5-newspaper.png'" th:class="newspaper" />
-<img th:src="'/trashes/1-apple.png'" th:class="apple" />
-<img th:src="'/trashes/10-tin.png'" th:class="tin" />
-<img th:src="'/trashes/12-spraycan.png'" th:class="spraycan" />
 
 
 <div class="row justify-content-center">
@@ -28,7 +23,7 @@
     <img id="logo" src="/images/nalle.png" alt="">
 </div>
 <div class="row justify-content-center">
-    <a class="btn btn-primary btn-lg shadow" id="play-button" th:href="@{/level1}">SPELA</a>
+    <a class="btn btn-primary btn-lg shadow" id="play-button" th:href="@{/game}">SPELA</a>
 </div>
 <div th:class="rules-button">
     <a>REGLER</a>

@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MotleyForces';
-    src: url('/MotleyForcesRegular-w1rZ3.ttf')
+    src: url('../MotleyForcesRegular-w1rZ3.ttf')
 }
 
 
@@ -11,7 +11,7 @@
 }
 
 body {
-    background-image: url(../images/background.png);
+    background-image: url(../images/level2-background.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;

@@ -5,20 +5,21 @@
     <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="/css/win.css"/>
     <title>Nalles Sopstation</title>
-    <audio id="crowd" src="/audio/crowdcheering.mp3" autoplay></audio>
+    <audio id="crowd" src="/audio/crowdcheering.mp3"></audio>
+
 
 </head>
 <body>
         <canvas id="canvas"></canvas>
-        <div th:class="black-filter"></div>
         <p th:class="congrat-text">Grattis, du vann!</p>
         <img th:src="'/images/gold.png'" th:class="price-image"/>
-        <button th:class="play-again-btn"><a th:href="'/level1'">Spela igen</a></button>
+        <button class="play-again-btn"><a >Spela igen</a></button>
 
     <script
             src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js">
     </script>
 
+        <script src="/gameplay.js"></script>
     <script src="/win.js"></script>
 
 </body>

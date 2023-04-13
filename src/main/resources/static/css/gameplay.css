@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MotleyForces';
-    src: url('/MotleyForcesRegular-w1rZ3.ttf')
+    src: url('../MotleyForcesRegular-w1rZ3.ttf')
 }
 
 * {
@@ -9,8 +9,11 @@
     box-sizing: border-box;
 }
 
+
+
 body {
-background-image: url(../images/kitchen2.png);
+
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -21,13 +24,10 @@ background-image: url(../images/kitchen2.png);
     overflow-x: hidden;
 }
 
-.black-filter {
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
-    top: 0;
-    left: 0;
+.point-box{
+
+
+
 
 }
 
@@ -39,12 +39,14 @@ background-image: url(../images/kitchen2.png);
   z-index: 1;
 }
 #mute-button {
-  font-size: 16px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #ddd;
-  margin-right: 10px;
+    font-family: "MotleyForces";
+    font-size: 20px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: cornflowerblue;
+    margin-right: 10px;
 }
 
 #volume-slider {
@@ -66,6 +68,8 @@ background-image: url(../images/kitchen2.png);
   cursor: pointer;
 }
 
+
+
 .trash {
     width: 120px;
     height: auto;
@@ -74,19 +78,22 @@ background-image: url(../images/kitchen2.png);
 }
 .trashcan-container {
 
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-bottom: 2%;
+    padding-left: 15%;
+    padding-right: 15%;
     position: fixed;
     bottom: 0;
     width: 100%;
 
 }
 
+
 .trashcan {
 
     width: 100%;
     height: 100%;
-    object-fit: cover
+    object-fit: cover;
+
 
     }
 
@@ -100,11 +107,20 @@ background-image: url(../images/kitchen2.png);
         visibility: hidden;
     }
 
+    .point-table{
+        color: darkgray;
+        text-shadow: 2px 4px 4px rgba(99,99,99,0.6);
+
+
+
+    }
+
     .point-text {
+
         position: absolute;
         top: 2%;
-        left: 2.5%;
-        font-size: 24px;
+        left: 2%;
+        font-size: 32px;
         letter-spacing: 1.3px;
         font-family: "MotleyForces";
         z-index: 12;
@@ -118,7 +134,7 @@ background-image: url(../images/kitchen2.png);
         color: white;
         z-index: 12;
         font-family: "MotleyForces";
-        font-size: 24px;
+        font-size: 32px;
     }
 
 
