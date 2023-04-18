@@ -20,7 +20,7 @@ public class TrashRepository {
 
 
 
-    private Trash createTrash(ResultSet rs)throws SQLException {
+    public Trash createTrash(ResultSet rs)throws SQLException {
         return new Trash(rs.getInt("id"),
                 rs.getInt("trash_category_id"),
                 rs.getString("image"));
